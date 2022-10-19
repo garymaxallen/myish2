@@ -6,19 +6,6 @@
 	objectVersion = 54;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		BB4A922324ED9402002F5A96 /* iSH pre */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = BB4A922424ED9402002F5A96 /* Build configuration list for PBXAggregateTarget "iSH pre" */;
-			buildPhases = (
-			);
-			dependencies = (
-			);
-			name = "iSH pre";
-			productName = "iSH pre";
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		491B31E62883BF22008EEFB0 /* ThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 491B31E52883BF22008EEFB0 /* ThemeViewController.m */; };
 		496C7AB227CC697E005D7613 /* Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 491C4C1E27C8FB65008B1DFA /* Theme.m */; };
@@ -138,13 +125,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = BB13F7D0200ACCA2003D1C4D;
 			remoteInfo = Ninja;
-		};
-		BB4A922724ED940C002F5A96 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BB792B461F96D8E000FFB7A4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BB4A922324ED9402002F5A96;
-			remoteInfo = "iSH pre";
 		};
 		BBEF1928268063FD001225BD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1094,7 +1074,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				BB4A922824ED940C002F5A96 /* PBXTargetDependency */,
 				BBEF1929268063FD001225BD /* PBXTargetDependency */,
 				BB10E5CB248DBAB7009C7A74 /* PBXTargetDependency */,
 				BB13F7E7200AD874003D1C4D /* PBXTargetDependency */,
@@ -1156,10 +1135,6 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
-					BB4A922324ED9402002F5A96 = {
-						CreatedOnToolsVersion = 11.5;
-						ProvisioningStyle = Automatic;
-					};
 					BB792B4F1F96D90D00FFB7A4 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -1200,7 +1175,6 @@
 				BB13F7DB200AD81D003D1C4D /* libish */,
 				BB21A1662689041500BD19B4 /* libfakefs */,
 				BBFB2C542590257E00545EAB /* libish_emu */,
-				BB4A922324ED9402002F5A96 /* iSH pre */,
 			);
 		};
 /* End PBXProject section */
@@ -1401,11 +1375,6 @@
 			target = BB13F7D0200ACCA2003D1C4D /* Ninja */;
 			targetProxy = BB21A1682689041500BD19B4 /* PBXContainerItemProxy */;
 		};
-		BB4A922824ED940C002F5A96 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BB4A922324ED9402002F5A96 /* iSH pre */;
-			targetProxy = BB4A922724ED940C002F5A96 /* PBXContainerItemProxy */;
-		};
 		BBEF1929268063FD001225BD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BBEF191D26806364001225BD /* libiSHApp */;
@@ -1496,18 +1465,6 @@
 			};
 			name = ReleaseLinux;
 		};
-		BB4A922524ED9402002F5A96 /* Debug-ApplePleaseFixFB19282108 */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = "Debug-ApplePleaseFixFB19282108";
-		};
-		BB4A922624ED9402002F5A96 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Release;
-		};
 		BB792B4A1F96D8E000FFB7A4 /* Debug-ApplePleaseFixFB19282108 */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BB0B85A42586F1CB00208600 /* ProjectDebug.xcconfig */;
@@ -1586,12 +1543,6 @@
 			};
 			name = DebugLinux;
 		};
-		BB7F620F2688EAB5003C0220 /* DebugLinux */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = DebugLinux;
-		};
 		BBEF192426806364001225BD /* Debug-ApplePleaseFixFB19282108 */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BBEF192C26806546001225BD /* AppLib.xcconfig */;
@@ -1654,12 +1605,6 @@
 			};
 			name = ReleaseLinux;
 		};
-		BBEF19B526806D1F001225BD /* ReleaseLinux */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = ReleaseLinux;
-		};
 		BBFB2C592590257E00545EAB /* Debug-ApplePleaseFixFB19282108 */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BBFB2CDA259028DC00545EAB /* StaticLib.xcconfig */;
@@ -1717,17 +1662,6 @@
 				BB21A16C2689041500BD19B4 /* DebugLinux */,
 				BB21A16D2689041500BD19B4 /* Release */,
 				BB21A16E2689041500BD19B4 /* ReleaseLinux */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BB4A922424ED9402002F5A96 /* Build configuration list for PBXAggregateTarget "iSH pre" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BB4A922524ED9402002F5A96 /* Debug-ApplePleaseFixFB19282108 */,
-				BB7F620F2688EAB5003C0220 /* DebugLinux */,
-				BB4A922624ED9402002F5A96 /* Release */,
-				BBEF19B526806D1F001225BD /* ReleaseLinux */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
