@@ -13,6 +13,7 @@ rm -rf meson
 ln -s $myhome/mesonbuild meson
 cd ../..
 cp ish_resources/infoplisticons.h build/Release-iphonesimulator/
+bash ish_resources/xcode-meson.sh
 xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator15.5 -target libfakefs
 xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator15.5 -target libish_emu
 xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -arch x86_64 -sdk iphonesimulator15.5 -target iSH

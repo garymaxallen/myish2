@@ -98,13 +98,6 @@
 			remoteGlobalIDString = BB10E0D5248DA67B009C7A74;
 			remoteInfo = libarchive;
 		};
-		BB13F7D4200ACCA8003D1C4D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BB792B461F96D8E000FFB7A4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BB13F7CA200ACC31003D1C4D;
-			remoteInfo = Meson;
-		};
 		BB13F7E6200AD874003D1C4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BB792B461F96D8E000FFB7A4 /* Project object */;
@@ -998,20 +991,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXLegacyTarget section */
-		BB13F7CA200ACC31003D1C4D /* Meson */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "";
-			buildConfigurationList = BB13F7CB200ACC31003D1C4D /* Build configuration list for PBXLegacyTarget "Meson" */;
-			buildPhases = (
-			);
-			buildToolPath = "$(SRCROOT)/xcode-meson.sh";
-			buildWorkingDirectory = "";
-			dependencies = (
-			);
-			name = Meson;
-			passBuildSettingsInEnvironment = 1;
-			productName = Meson;
-		};
 		BB13F7D0200ACCA2003D1C4D /* Ninja */ = {
 			isa = PBXLegacyTarget;
 			buildArgumentsString = "$(NINJA_TARGETS)";
@@ -1021,7 +1000,6 @@
 			buildToolPath = "$(SRCROOT)/xcode-ninja.sh";
 			buildWorkingDirectory = "$(MESON_BUILD_DIR)";
 			dependencies = (
-				BB13F7D5200ACCA8003D1C4D /* PBXTargetDependency */,
 			);
 			name = Ninja;
 			passBuildSettingsInEnvironment = 1;
@@ -1123,10 +1101,6 @@
 				CLASSPREFIX = "";
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
-					BB13F7CA200ACC31003D1C4D = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-					};
 					BB13F7D0200ACCA2003D1C4D = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -1170,7 +1144,6 @@
 			targets = (
 				BB792B4F1F96D90D00FFB7A4 /* iSH */,
 				BBEF191D26806364001225BD /* libiSHApp */,
-				BB13F7CA200ACC31003D1C4D /* Meson */,
 				BB13F7D0200ACCA2003D1C4D /* Ninja */,
 				BB13F7DB200AD81D003D1C4D /* libish */,
 				BB21A1662689041500BD19B4 /* libfakefs */,
@@ -1355,11 +1328,6 @@
 			name = libarchive;
 			targetProxy = BB10E5CA248DBAB7009C7A74 /* PBXContainerItemProxy */;
 		};
-		BB13F7D5200ACCA8003D1C4D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BB13F7CA200ACC31003D1C4D /* Meson */;
-			targetProxy = BB13F7D4200ACCA8003D1C4D /* PBXContainerItemProxy */;
-		};
 		BB13F7E7200AD874003D1C4D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BB13F7DB200AD81D003D1C4D /* libish */;
@@ -1399,18 +1367,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BB13F7CC200ACC31003D1C4D /* Debug-ApplePleaseFixFB19282108 */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = "Debug-ApplePleaseFixFB19282108";
-		};
-		BB13F7CD200ACC31003D1C4D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Release;
-		};
 		BB13F7D2200ACCA2003D1C4D /* Debug-ApplePleaseFixFB19282108 */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1517,12 +1473,6 @@
 			};
 			name = DebugLinux;
 		};
-		BB7F620B2688EAB5003C0220 /* DebugLinux */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = DebugLinux;
-		};
 		BB7F620C2688EAB5003C0220 /* DebugLinux */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1579,12 +1529,6 @@
 			};
 			name = ReleaseLinux;
 		};
-		BBEF19B126806D1F001225BD /* ReleaseLinux */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = ReleaseLinux;
-		};
 		BBEF19B226806D1F001225BD /* ReleaseLinux */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1622,17 +1566,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BB13F7CB200ACC31003D1C4D /* Build configuration list for PBXLegacyTarget "Meson" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BB13F7CC200ACC31003D1C4D /* Debug-ApplePleaseFixFB19282108 */,
-				BB7F620B2688EAB5003C0220 /* DebugLinux */,
-				BB13F7CD200ACC31003D1C4D /* Release */,
-				BBEF19B126806D1F001225BD /* ReleaseLinux */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		BB13F7D1200ACCA2003D1C4D /* Build configuration list for PBXLegacyTarget "Ninja" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
