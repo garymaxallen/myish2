@@ -14,8 +14,6 @@ ln -s $myhome/mesonbuild meson
 cd ../..
 xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator15.5 -target libfakefs
 xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator15.5 -target libish_emu
-#xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator15.5 -target liblinux
-#xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -arch x86_64 -sdk iphonesimulator15.5 -target iSHFileProvider
 xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -arch x86_64 -sdk iphonesimulator15.5 -target iSH
 cp ish_resources/hterm_all.js build/Release-iphonesimulator/iSH.app/
 cp ish_resources/root.tar.gz build/Release-iphonesimulator/iSH.app/
