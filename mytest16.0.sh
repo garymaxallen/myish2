@@ -15,6 +15,7 @@ bash ish_resources/xcode-meson.sh
 xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator16.0 -target libfakefs
 #xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator16.0 -target libish_emu
 ln -s $myhome/build/Release-iphonesimulator/meson/libish_emu.a $myhome/build/Release-iphonesimulator/libish_emu.a
+ln -s $myhome/build/Release-iphonesimulator/meson/libish.a $myhome/build/Release-iphonesimulator/libish.a
 xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -arch x86_64 -sdk iphonesimulator16.0 -target iSH
 cp ish_resources/hterm_all.js build/Release-iphonesimulator/iSH.app/
 cp ish_resources/root.tar.gz build/Release-iphonesimulator/iSH.app/

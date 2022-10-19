@@ -98,13 +98,6 @@
 			remoteGlobalIDString = BB10E0D5248DA67B009C7A74;
 			remoteInfo = libarchive;
 		};
-		BB13F7E6200AD874003D1C4D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BB792B461F96D8E000FFB7A4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BB13F7DB200AD81D003D1C4D;
-			remoteInfo = libish;
-		};
 		BB13F7E8200AD967003D1C4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BB792B461F96D8E000FFB7A4 /* Project object */;
@@ -1054,7 +1047,6 @@
 			dependencies = (
 				BBEF1929268063FD001225BD /* PBXTargetDependency */,
 				BB10E5CB248DBAB7009C7A74 /* PBXTargetDependency */,
-				BB13F7E7200AD874003D1C4D /* PBXTargetDependency */,
 			);
 			name = iSH;
 			productName = iSH;
@@ -1327,11 +1319,6 @@
 			isa = PBXTargetDependency;
 			name = libarchive;
 			targetProxy = BB10E5CA248DBAB7009C7A74 /* PBXContainerItemProxy */;
-		};
-		BB13F7E7200AD874003D1C4D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BB13F7DB200AD81D003D1C4D /* libish */;
-			targetProxy = BB13F7E6200AD874003D1C4D /* PBXContainerItemProxy */;
 		};
 		BB13F7E9200AD967003D1C4D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
