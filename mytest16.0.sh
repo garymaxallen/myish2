@@ -8,15 +8,13 @@ cd mesonbuild
 ninja -v
 cd ..
 mkdir -p build/Release-iphonesimulator
-cd build/Release-iphonesimulator
-rm -rf meson
-ln -s $myhome/mesonbuild meson
-cd ../..
+ln -s $myhome/mesonbuild $myhome/build/Release-iphonesimulator/meson
 cp ish_resources/infoplisticons.h build/Release-iphonesimulator/
 bash ish_resources/xcode-meson.sh
 #bash ish_resources/xcode-ninja.sh
 xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator16.0 -target libfakefs
-xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator16.0 -target libish_emu
+#xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -sdk iphonesimulator16.0 -target libish_emu
+ln -s $myhome/build/Release-iphonesimulator/meson/libish_emu.a $myhome/build/Release-iphonesimulator/libish_emu.a
 xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -arch x86_64 -sdk iphonesimulator16.0 -target iSH
 cp ish_resources/hterm_all.js build/Release-iphonesimulator/iSH.app/
 cp ish_resources/root.tar.gz build/Release-iphonesimulator/iSH.app/
