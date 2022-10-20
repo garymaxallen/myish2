@@ -2,3 +2,5 @@
 build
 mesonbuild
 project.xcworkspace/
+deps/libarchive.xcodeproj/xcuserdata/
+iSH.xcodeproj/xcuserdata/
