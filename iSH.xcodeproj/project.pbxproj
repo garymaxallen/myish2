@@ -91,13 +91,6 @@
 			remoteGlobalIDString = BB10E0D6248DA67B009C7A74;
 			remoteInfo = libarchive;
 		};
-		BB10E5CA248DBAB7009C7A74 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BB10E0C1248DA5B0009C7A74 /* libarchive.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = BB10E0D5248DA67B009C7A74;
-			remoteInfo = libarchive;
-		};
 		BB13F7E8200AD967003D1C4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BB792B461F96D8E000FFB7A4 /* Project object */;
@@ -1046,7 +1039,6 @@
 			);
 			dependencies = (
 				BBEF1929268063FD001225BD /* PBXTargetDependency */,
-				BB10E5CB248DBAB7009C7A74 /* PBXTargetDependency */,
 			);
 			name = iSH;
 			productName = iSH;
@@ -1315,11 +1307,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BB10E5CB248DBAB7009C7A74 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = libarchive;
-			targetProxy = BB10E5CA248DBAB7009C7A74 /* PBXContainerItemProxy */;
-		};
 		BB13F7E9200AD967003D1C4D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BB13F7D0200ACCA2003D1C4D /* Ninja */;
