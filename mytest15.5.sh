@@ -4,9 +4,7 @@ cd $myhome
 xcrun simctl uninstall booted app.ish.iSH
 rm -rf build mesonbuild
 meson setup mesonbuild
-cd mesonbuild
-ninja -v
-cd ..
+ninja -C mesonbuild -v
 mkdir -p build/Release-iphonesimulator
 ln -s $myhome/mesonbuild $myhome/build/Release-iphonesimulator/meson
 cp ish_resources/infoplisticons.h build/Release-iphonesimulator/
