@@ -314,7 +314,6 @@
 		BB123ACD26C9F13500419CDA /* IOSCalls.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOSCalls.m; sourceTree = "<group>"; };
 		BB13F4DC21C5770000343E17 /* NSError+ISHErrno.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSError+ISHErrno.h"; sourceTree = "<group>"; };
 		BB13F4DD21C5770000343E17 /* NSError+ISHErrno.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSError+ISHErrno.m"; sourceTree = "<group>"; };
-		BB13F7C8200ACC24003D1C4D /* xcode-meson.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "xcode-meson.sh"; sourceTree = "<group>"; };
 		BB13F7DC200AD81D003D1C4D /* libish.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libish.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB149E7E256DC97C00F57815 /* PassthroughView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PassthroughView.h; sourceTree = "<group>"; };
 		BB149E7F256DC97C00F57815 /* PassthroughView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PassthroughView.m; sourceTree = "<group>"; };
@@ -548,7 +547,6 @@
 		BB18B27F1F97F2590059FCD8 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
-				BB13F7C8200ACC24003D1C4D /* xcode-meson.sh */,
 				494D03F72727DAC6004F0CCE /* xcode-ninja.sh */,
 			);
 			name = Scripts;
