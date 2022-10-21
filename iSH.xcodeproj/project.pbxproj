@@ -10,12 +10,13 @@
 		491B31E62883BF22008EEFB0 /* ThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 491B31E52883BF22008EEFB0 /* ThemeViewController.m */; };
 		496C7AB227CC697E005D7613 /* Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 491C4C1E27C8FB65008B1DFA /* Theme.m */; };
 		496C7AB327CC734D005D7613 /* ThemesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 491C4C1627C8F84A008B1DFA /* ThemesViewController.m */; };
+		63021CA02902D6020001E3E0 /* libarchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63021C9F2902D6020001E3E0 /* libarchive.a */; };
+		63021CA42902D6790001E3E0 /* libish_emu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63021CA12902D6790001E3E0 /* libish_emu.a */; };
+		63021CA52902D6790001E3E0 /* libish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63021CA22902D6790001E3E0 /* libish.a */; };
+		63021CA62902D6790001E3E0 /* libfakefs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63021CA32902D6790001E3E0 /* libfakefs.a */; };
 		BB0F552E239F8A790032A2A1 /* Icons.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB0F552D239F8A790032A2A1 /* Icons.plist */; };
-		BB10E5C9248DBAAC009C7A74 /* libarchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB10E5C8248DBAA1009C7A74 /* libarchive.a */; };
 		BB10E5D0248DC21D009C7A74 /* Roots.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB10E5CF248DC21D009C7A74 /* Roots.storyboard */; };
 		BB123ACE26C9F13500419CDA /* IOSCalls.m in Sources */ = {isa = PBXBuildFile; fileRef = BB123ACD26C9F13500419CDA /* IOSCalls.m */; };
-		BB13F7EA200ADCED003D1C4D /* libish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB13F7DC200AD81D003D1C4D /* libish.a */; };
-		BB21A18426890C7E00BD19B4 /* libfakefs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB21A16F2689041500BD19B4 /* libfakefs.a */; };
 		BB235537235D49B300139E00 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB235536235D49B300139E00 /* CoreLocation.framework */; };
 		BB28C79226896B1F00BDC834 /* AboutAppearanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A28E4E9219A8B670073D200 /* AboutAppearanceViewController.m */; };
 		BB28C79326896B1F00BDC834 /* AltIconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB267FA523A48F1500ED7CAF /* AltIconViewController.m */; };
@@ -79,7 +80,6 @@
 		BBC3863E276817A900CC8C2E /* UpgradeRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBA5D87D27536E7600B39D77 /* UpgradeRootViewController.m */; };
 		BBC3863F276817AD00CC8C2E /* CurrentRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = BB565EA32734F1FB00C93EAE /* CurrentRoot.m */; };
 		BBECF3BC26913F1600DEC937 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB792B541F96D90D00FFB7A4 /* AppDelegate.m */; };
-		BBFB2CEC2590296B00545EAB /* libish_emu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFB2C5B2590257E00545EAB /* libish_emu.a */; };
 		BBFB55662158644C00DFE6DE /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFB55652158644C00DFE6DE /* libresolv.tbd */; };
 /* End PBXBuildFile section */
 
@@ -255,6 +255,10 @@
 		497F6CD1254E5CC800C82F46 /* timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = timer.h; sourceTree = "<group>"; };
 		497F6CD2254E5CC800C82F46 /* sync.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sync.c; sourceTree = "<group>"; };
 		497F6CD3254E5CC800C82F46 /* bits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bits.h; sourceTree = "<group>"; };
+		63021C9F2902D6020001E3E0 /* libarchive.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libarchive.a; path = ish_resources/libarchive.a; sourceTree = "<group>"; };
+		63021CA12902D6790001E3E0 /* libish_emu.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libish_emu.a; path = ish_resources/libish_emu.a; sourceTree = "<group>"; };
+		63021CA22902D6790001E3E0 /* libish.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libish.a; path = ish_resources/libish.a; sourceTree = "<group>"; };
+		63021CA32902D6790001E3E0 /* libfakefs.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfakefs.a; path = ish_resources/libfakefs.a; sourceTree = "<group>"; };
 		650B337222EA235C00B4C03E /* PasteboardDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteboardDevice.h; sourceTree = "<group>"; };
 		650B337322EA235C00B4C03E /* PasteboardDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteboardDevice.m; sourceTree = "<group>"; };
 		8632A7BD219A59FB00F02325 /* UserPreferences.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserPreferences.h; sourceTree = "<group>"; };
@@ -410,11 +414,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63021CA42902D6790001E3E0 /* libish_emu.a in Frameworks */,
+				63021CA52902D6790001E3E0 /* libish.a in Frameworks */,
+				63021CA62902D6790001E3E0 /* libfakefs.a in Frameworks */,
+				63021CA02902D6020001E3E0 /* libarchive.a in Frameworks */,
 				BB28C7AE26896C1D00BDC834 /* libiSHApp.a in Frameworks */,
-				BB21A18426890C7E00BD19B4 /* libfakefs.a in Frameworks */,
-				BB13F7EA200ADCED003D1C4D /* libish.a in Frameworks */,
-				BBFB2CEC2590296B00545EAB /* libish_emu.a in Frameworks */,
-				BB10E5C9248DBAAC009C7A74 /* libarchive.a in Frameworks */,
 				BB235537235D49B300139E00 /* CoreLocation.framework in Frameworks */,
 				BBA8E2C1236FF5EA00515F76 /* SystemConfiguration.framework in Frameworks */,
 				BBAEE339249B58E80069EBB5 /* libbz2.tbd in Frameworks */,
@@ -689,6 +693,10 @@
 		BB792B7D1F96E32B00FFB7A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				63021CA32902D6790001E3E0 /* libfakefs.a */,
+				63021CA12902D6790001E3E0 /* libish_emu.a */,
+				63021CA22902D6790001E3E0 /* libish.a */,
+				63021C9F2902D6020001E3E0 /* libarchive.a */,
 				BB28C755268956C900BDC834 /* Foundation.framework */,
 				BBAEE338249B58E80069EBB5 /* libbz2.tbd */,
 				BBA8E2C0236FF5EA00515F76 /* SystemConfiguration.framework */,
@@ -1340,6 +1348,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BB0B86CD2586FD8800208600 /* App.xcconfig */;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ish_resources",
+				);
 			};
 			name = "Debug-ApplePleaseFixFB19282108";
 		};
@@ -1347,6 +1359,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BB0B86CD2586FD8800208600 /* App.xcconfig */;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ish_resources",
+				);
 			};
 			name = Release;
 		};
@@ -1362,6 +1378,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BB0B86CD2586FD8800208600 /* App.xcconfig */;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ish_resources",
+				);
 			};
 			name = DebugLinux;
 		};
@@ -1412,6 +1432,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BB0B86CD2586FD8800208600 /* App.xcconfig */;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ish_resources",
+				);
 			};
 			name = ReleaseLinux;
 		};
