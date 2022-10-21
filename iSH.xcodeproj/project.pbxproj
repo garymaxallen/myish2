@@ -953,23 +953,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXLegacyTarget section */
-		BB13F7D0200ACCA2003D1C4D /* Ninja */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "$(NINJA_TARGETS)";
-			buildConfigurationList = BB13F7D1200ACCA2003D1C4D /* Build configuration list for PBXLegacyTarget "Ninja" */;
-			buildPhases = (
-			);
-			buildToolPath = "$(SRCROOT)/xcode-ninja.sh";
-			buildWorkingDirectory = "$(MESON_BUILD_DIR)";
-			dependencies = (
-			);
-			name = Ninja;
-			passBuildSettingsInEnvironment = 1;
-			productName = Ninja;
-		};
-/* End PBXLegacyTarget section */
-
 /* Begin PBXNativeTarget section */
 		BB13F7DB200AD81D003D1C4D /* libish */ = {
 			isa = PBXNativeTarget;
@@ -1059,10 +1042,6 @@
 				CLASSPREFIX = "";
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
-					BB13F7D0200ACCA2003D1C4D = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-					};
 					BB13F7DB200AD81D003D1C4D = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -1102,7 +1081,6 @@
 			targets = (
 				BB792B4F1F96D90D00FFB7A4 /* iSH */,
 				BBEF191D26806364001225BD /* libiSHApp */,
-				BB13F7D0200ACCA2003D1C4D /* Ninja */,
 				BB13F7DB200AD81D003D1C4D /* libish */,
 				BB21A1662689041500BD19B4 /* libfakefs */,
 				BBFB2C542590257E00545EAB /* libish_emu */,
@@ -1300,18 +1278,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BB13F7D2200ACCA2003D1C4D /* Debug-ApplePleaseFixFB19282108 */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = "Debug-ApplePleaseFixFB19282108";
-		};
-		BB13F7D3200ACCA2003D1C4D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Release;
-		};
 		BB13F7E3200AD81E003D1C4D /* Debug-ApplePleaseFixFB19282108 */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BBFB2CDA259028DC00545EAB /* StaticLib.xcconfig */;
@@ -1406,12 +1372,6 @@
 			};
 			name = DebugLinux;
 		};
-		BB7F620C2688EAB5003C0220 /* DebugLinux */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = DebugLinux;
-		};
 		BB7F620D2688EAB5003C0220 /* DebugLinux */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BBFB2CDA259028DC00545EAB /* StaticLib.xcconfig */;
@@ -1462,12 +1422,6 @@
 			};
 			name = ReleaseLinux;
 		};
-		BBEF19B226806D1F001225BD /* ReleaseLinux */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = ReleaseLinux;
-		};
 		BBEF19B326806D1F001225BD /* ReleaseLinux */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BBFB2CDA259028DC00545EAB /* StaticLib.xcconfig */;
@@ -1499,17 +1453,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BB13F7D1200ACCA2003D1C4D /* Build configuration list for PBXLegacyTarget "Ninja" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BB13F7D2200ACCA2003D1C4D /* Debug-ApplePleaseFixFB19282108 */,
-				BB7F620C2688EAB5003C0220 /* DebugLinux */,
-				BB13F7D3200ACCA2003D1C4D /* Release */,
-				BBEF19B226806D1F001225BD /* ReleaseLinux */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		BB13F7E2200AD81E003D1C4D /* Build configuration list for PBXNativeTarget "libish" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
