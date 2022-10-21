@@ -84,13 +84,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		BB10E5C7248DBAA1009C7A74 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BB10E0C1248DA5B0009C7A74 /* libarchive.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BB10E0D6248DA67B009C7A74;
-			remoteInfo = libarchive;
-		};
 		BBEF1928268063FD001225BD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BB792B461F96D8E000FFB7A4 /* Project object */;
@@ -286,7 +279,6 @@
 		BB0FC5911F980A6B00803272 /* Terminal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Terminal.m; sourceTree = "<group>"; };
 		BB101B362364CF57000A93BC /* FontPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FontPickerViewController.h; sourceTree = "<group>"; };
 		BB101B372364CF57000A93BC /* FontPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FontPickerViewController.m; sourceTree = "<group>"; };
-		BB10E0C1248DA5B0009C7A74 /* libarchive.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libarchive.xcodeproj; path = ../deps/libarchive.xcodeproj; sourceTree = "<group>"; };
 		BB10E5C2248DBA7B009C7A74 /* fakefs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = fakefs.c; path = tools/fakefs.c; sourceTree = SOURCE_ROOT; };
 		BB10E5CC248DBE66009C7A74 /* Roots.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Roots.h; sourceTree = "<group>"; };
 		BB10E5CD248DBE66009C7A74 /* Roots.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Roots.m; sourceTree = "<group>"; };
@@ -511,17 +503,8 @@
 				BBAEE33A249BDADC0069EBB5 /* ProgressReportViewController.h */,
 				BBAEE33B249BDADC0069EBB5 /* ProgressReportViewController.m */,
 				BB10E5C2248DBA7B009C7A74 /* fakefs.c */,
-				BB10E0C1248DA5B0009C7A74 /* libarchive.xcodeproj */,
 			);
 			name = Roots;
-			sourceTree = "<group>";
-		};
-		BB10E5C4248DBAA1009C7A74 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				BB10E5C8248DBAA1009C7A74 /* libarchive.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		BB18B27F1F97F2590059FCD8 /* Scripts */ = {
@@ -1024,12 +1007,6 @@
 			mainGroup = BB792B451F96D8E000FFB7A4;
 			productRefGroup = BB792B511F96D90D00FFB7A4 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = BB10E5C4248DBAA1009C7A74 /* Products */;
-					ProjectRef = BB10E0C1248DA5B0009C7A74 /* libarchive.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				BB792B4F1F96D90D00FFB7A4 /* iSH */,
@@ -1037,16 +1014,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		BB10E5C8248DBAA1009C7A74 /* libarchive.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libarchive.a;
-			remoteRef = BB10E5C7248DBAA1009C7A74 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BB792B4E1F96D90D00FFB7A4 /* Resources */ = {
