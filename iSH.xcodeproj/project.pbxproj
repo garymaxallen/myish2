@@ -91,33 +91,12 @@
 			remoteGlobalIDString = BB10E0D6248DA67B009C7A74;
 			remoteInfo = libarchive;
 		};
-		BB13F7E8200AD967003D1C4D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BB792B461F96D8E000FFB7A4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BB13F7D0200ACCA2003D1C4D;
-			remoteInfo = Ninja;
-		};
-		BB21A1682689041500BD19B4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BB792B461F96D8E000FFB7A4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BB13F7D0200ACCA2003D1C4D;
-			remoteInfo = Ninja;
-		};
 		BBEF1928268063FD001225BD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BB792B461F96D8E000FFB7A4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = BBEF191D26806364001225BD;
 			remoteInfo = libiSH;
-		};
-		BBFB2C562590257E00545EAB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BB792B461F96D8E000FFB7A4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BB13F7D0200ACCA2003D1C4D;
-			remoteInfo = Ninja;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -1001,7 +980,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				BB13F7E9200AD967003D1C4D /* PBXTargetDependency */,
 			);
 			name = libish;
 			productName = libish;
@@ -1017,7 +995,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				BB21A1672689041500BD19B4 /* PBXTargetDependency */,
 			);
 			name = libfakefs;
 			productName = libish;
@@ -1067,7 +1044,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				BBFB2C552590257E00545EAB /* PBXTargetDependency */,
 			);
 			name = libish_emu;
 			productName = libish;
@@ -1305,25 +1281,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		BB13F7E9200AD967003D1C4D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BB13F7D0200ACCA2003D1C4D /* Ninja */;
-			targetProxy = BB13F7E8200AD967003D1C4D /* PBXContainerItemProxy */;
-		};
-		BB21A1672689041500BD19B4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BB13F7D0200ACCA2003D1C4D /* Ninja */;
-			targetProxy = BB21A1682689041500BD19B4 /* PBXContainerItemProxy */;
-		};
 		BBEF1929268063FD001225BD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BBEF191D26806364001225BD /* libiSHApp */;
 			targetProxy = BBEF1928268063FD001225BD /* PBXContainerItemProxy */;
-		};
-		BBFB2C552590257E00545EAB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BB13F7D0200ACCA2003D1C4D /* Ninja */;
-			targetProxy = BBFB2C562590257E00545EAB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
