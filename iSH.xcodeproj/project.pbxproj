@@ -917,7 +917,6 @@
 			buildPhases = (
 				BB21A17826890A5B00BD19B4 /* Sources */,
 				BB792B4D1F96D90D00FFB7A4 /* Frameworks */,
-				BB034E8C263643C10000A498 /* Generate APK Repositories File */,
 				BB792B4E1F96D90D00FFB7A4 /* Resources */,
 			);
 			buildRules = (
@@ -1025,30 +1024,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		BB034E8C263643C10000A498 /* Generate APK Repositories File */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/deps/aports/main/x86/index.txt",
-				"$(SRCROOT)/deps/aports/community/x86/index.txt",
-			);
-			name = "Generate APK Repositories File";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(CONTENTS_FOLDER_PATH)/repositories.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /usr/bin/python3;
-			shellScript = "import os\ndef trim(x, start, end):\n    assert x.startswith(start)\n    assert x.endswith(end)\n    return x[len(start):-len(end)]\nrepos_file = []\nfor repo in ['main', 'community']:\n    with open(f'{os.environ[\"SRCROOT\"]}/deps/aports/{repo}/x86/index.txt') as f:\n        index_name = f.read()\n    index_name = trim(index_name, 'APKINDEX-', '.tar.gz\\n')\n    repos_file.append(f'http://apk.ish.app/{index_name}/{repo}')\nwith open(os.path.join(os.environ['BUILT_PRODUCTS_DIR'], os.environ['CONTENTS_FOLDER_PATH'], 'repositories.txt'), 'w') as f:\n    for line in repos_file:\n        print(line, file=f)\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BB21A17826890A5B00BD19B4 /* Sources */ = {
