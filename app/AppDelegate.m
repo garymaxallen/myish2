@@ -9,19 +9,19 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 #import <SystemConfiguration/SystemConfiguration.h>
-#import "AboutViewController.h"
+//#import "AboutViewController.h"
 #import "AppDelegate.h"
-#import "AppGroup.h"
+//#import "AppGroup.h"
 #import "CurrentRoot.h"
 #import "iOSFS.h"
 #import "SceneDelegate.h"
 #import "PasteboardDevice.h"
 #import "LocationDevice.h"
-#import "NSObject+SaneKVO.h"
+//#import "NSObject+SaneKVO.h"
 #import "Roots.h"
 #import "TerminalViewController.h"
-#import "UserPreferences.h"
-#import "UIApplication+OpenURL.h"
+//#import "UserPreferences.h"
+//#import "UIApplication+OpenURL.h"
 #include "kernel/init.h"
 #include "kernel/calls.h"
 #include "fs/dyndev.h"
@@ -150,13 +150,14 @@ static NSString *const kSkipStartupMessage = @"Skip Startup Message";
     if (err < 0)
         return err;
     
-    NSArray<NSString *> *command;
-    command = UserPreferences.shared.bootCommand;
-    NSLog(@"%@", command);
-    char argv[4096];
-    [Terminal convertCommand:command toArgs:argv limitSize:sizeof(argv)];
-    const char *envp = "TERM=xterm-256color\0";
-    err = do_execve(command[0].UTF8String, command.count, argv, envp);
+//    NSArray<NSString *> *command;
+//    command = UserPreferences.shared.bootCommand;
+//    NSLog(@"%@", command);
+//    char argv[4096];
+//    [Terminal convertCommand:command toArgs:argv limitSize:sizeof(argv)];
+//    const char *envp = "TERM=xterm-256color\0";
+//    err = do_execve(command[0].UTF8String, command.count, argv, envp);
+    err = do_execve("/bin/login", 3, "/bin/login\0-f\0root\0", "TERM=xterm-256color\0");
     if (err < 0)
         return err;
     task_start(current);
@@ -227,30 +228,32 @@ void SyncHostname(void) {
 }
 
 + (void)maybePresentStartupMessageOnViewController:(UIViewController *)vc {
-    if ([NSUserDefaults.standardUserDefaults integerForKey:kSkipStartupMessage] >= 1)
-        return;
-    if (!FsIsManaged()) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Install iSH’s built-in APK?"
-                                                                       message:@"iSH now includes the APK package manager, but it must be manually activated."
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-        [alert addAction:[UIAlertAction actionWithTitle:@"Show me how"
-                                                  style:UIAlertActionStyleDefault
-                                                handler:^(UIAlertAction * _Nonnull action) {
-            [UIApplication openURL:@"https://go.ish.app/get-apk"];
-        }]];
-        [alert addAction:[UIAlertAction actionWithTitle:@"Don't show again"
-                                                  style:UIAlertActionStyleDefault
-                                                handler:nil]];
-        [vc presentViewController:alert animated:YES completion:nil];
-    }
-    [NSUserDefaults.standardUserDefaults setInteger:1 forKey:kSkipStartupMessage];
+//    if ([NSUserDefaults.standardUserDefaults integerForKey:kSkipStartupMessage] >= 1)
+//        return;
+//    if (!FsIsManaged()) {
+//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Install iSH’s built-in APK?"
+//                                                                       message:@"iSH now includes the APK package manager, but it must be manually activated."
+//                                                                preferredStyle:UIAlertControllerStyleAlert];
+//        [alert addAction:[UIAlertAction actionWithTitle:@"Show me how"
+//                                                  style:UIAlertActionStyleDefault
+//                                                handler:^(UIAlertAction * _Nonnull action) {
+//            [UIApplication openURL:@"https://go.ish.app/get-apk"];
+//        }]];
+//        [alert addAction:[UIAlertAction actionWithTitle:@"Don't show again"
+//                                                  style:UIAlertActionStyleDefault
+//                                                handler:nil]];
+//        [vc presentViewController:alert animated:YES completion:nil];
+//    }
+//    [NSUserDefaults.standardUserDefaults setInteger:1 forKey:kSkipStartupMessage];
 }
 
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey,id> *)launchOptions {
     NSUserDefaults *defaults = NSUserDefaults.standardUserDefaults;
     if ([defaults boolForKey:@"hail mary"]) {
-        [defaults removeObjectForKey:kPreferenceBootCommandKey];
-        [defaults removeObjectForKey:kPreferenceLaunchCommandKey];
+//        [defaults removeObjectForKey:kPreferenceBootCommandKey];
+//        [defaults removeObjectForKey:kPreferenceLaunchCommandKey];
+        [defaults removeObjectForKey:@"Boot Command"];
+        [defaults removeObjectForKey:@"Init Command"];
         [defaults setBool:NO forKey:@"hail mary"];
     }
     if ([NSUserDefaults.standardUserDefaults boolForKey:@"recovery"])
@@ -292,12 +295,12 @@ void NetworkReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
     uname_hostname_override = self.unameHostname.UTF8String;
 #endif
     
-    [UserPreferences.shared observe:@[@"shouldDisableDimming"] options:NSKeyValueObservingOptionInitial
-                              owner:self usingBlock:^(typeof(self) self) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            UIApplication.sharedApplication.idleTimerDisabled = UserPreferences.shared.shouldDisableDimming;
-        });
-    }];
+//    [UserPreferences.shared observe:@[@"shouldDisableDimming"] options:NSKeyValueObservingOptionInitial
+//                              owner:self usingBlock:^(typeof(self) self) {
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            UIApplication.sharedApplication.idleTimerDisabled = UserPreferences.shared.shouldDisableDimming;
+//        });
+//    }];
     
     struct sockaddr_in6 address = {
         .sin6_len = sizeof(address),
@@ -310,19 +313,19 @@ void NetworkReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
     SCNetworkReachabilitySetCallback(self.reachability, NetworkReachabilityCallback, &context);
     SCNetworkReachabilityScheduleWithRunLoop(self.reachability, CFRunLoopGetMain(), kCFRunLoopCommonModes);
 
-    if (self.window != nil) {
-        // For iOS <13, where the app delegate owns the window instead of the scene
-        if ([NSUserDefaults.standardUserDefaults boolForKey:@"recovery"]) {
-            UINavigationController *vc = [[UIStoryboard storyboardWithName:@"About" bundle:nil] instantiateInitialViewController];
-            AboutViewController *avc = (AboutViewController *) vc.topViewController;
-            avc.recoveryMode = YES;
-            self.window.rootViewController = vc;
-            return YES;
-        }
-        TerminalViewController *vc = (TerminalViewController *) self.window.rootViewController;
-        currentTerminalViewController = vc;
-        [vc startNewSession];
-    }
+//    if (self.window != nil) {
+//        // For iOS <13, where the app delegate owns the window instead of the scene
+//        if ([NSUserDefaults.standardUserDefaults boolForKey:@"recovery"]) {
+//            UINavigationController *vc = [[UIStoryboard storyboardWithName:@"About" bundle:nil] instantiateInitialViewController];
+//            AboutViewController *avc = (AboutViewController *) vc.topViewController;
+//            avc.recoveryMode = YES;
+//            self.window.rootViewController = vc;
+//            return YES;
+//        }
+//        TerminalViewController *vc = (TerminalViewController *) self.window.rootViewController;
+//        currentTerminalViewController = vc;
+//        [vc startNewSession];
+//    }
     return YES;
 }
 

@@ -6,7 +6,7 @@
 //
 
 #import "SceneDelegate.h"
-#import "AboutViewController.h"
+//#import "AboutViewController.h"
 
 TerminalViewController *currentTerminalViewController = NULL;
 

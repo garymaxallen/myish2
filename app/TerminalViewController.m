@@ -8,13 +8,13 @@
 #import "TerminalViewController.h"
 #import "AppDelegate.h"
 #import "TerminalView.h"
-#import "BarButton.h"
-#import "ArrowBarButton.h"
-#import "UserPreferences.h"
-#import "AboutViewController.h"
+//#import "BarButton.h"
+//#import "ArrowBarButton.h"
+//#import "UserPreferences.h"
+//#import "AboutViewController.h"
 #import "CurrentRoot.h"
-#import "NSObject+SaneKVO.h"
-#import "LinuxInterop.h"
+//#import "NSObject+SaneKVO.h"
+//#import "LinuxInterop.h"
 #include "kernel/init.h"
 #include "kernel/task.h"
 #include "kernel/calls.h"
@@ -655,13 +655,13 @@
     [self.pasteButton addTarget: self action: @selector(pressPaste) forControlEvents: UIControlEventTouchUpInside];
     [self.bar addSubview:self.pasteButton];
     
-    self.infoButton = [UIButton buttonWithType: UIButtonTypeSystem];
-    [self.infoButton setFrame: CGRectMake(320.0, 0.0, 40.0, 40.0)];
-    [self.infoButton setTitle: @"⚙️" forState: UIControlStateNormal];
-    [self.infoButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [self.infoButton setBackgroundColor: [UIColor whiteColor]];
-    [self.infoButton addTarget: self action: @selector(showAbout:) forControlEvents: UIControlEventTouchUpInside];
-    [self.bar addSubview:self.infoButton];
+//    self.infoButton = [UIButton buttonWithType: UIButtonTypeSystem];
+//    [self.infoButton setFrame: CGRectMake(320.0, 0.0, 40.0, 40.0)];
+//    [self.infoButton setTitle: @"⚙️" forState: UIControlStateNormal];
+//    [self.infoButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    [self.infoButton setBackgroundColor: [UIColor whiteColor]];
+//    [self.infoButton addTarget: self action: @selector(showAbout:) forControlEvents: UIControlEventTouchUpInside];
+//    [self.bar addSubview:self.infoButton];
     
     self.hideKeyboardButton = [UIButton buttonWithType: UIButtonTypeSystem];
     [self.hideKeyboardButton setFrame: CGRectMake(360.0, 0.0, 40.0, 40.0)];
@@ -730,17 +730,17 @@
 //        [self.escapeKey setImage:[UIImage systemImageNamed:@"escape"] forState:UIControlStateNormal];
 //    }
     
-    [UserPreferences.shared observe:@[@"hideStatusBar"] options:0 owner:self usingBlock:^(typeof(self) self) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self setNeedsStatusBarAppearanceUpdate];
-        });
-    }];
-    [UserPreferences.shared observe:@[@"colorScheme", @"theme", @"hideExtraKeysWithExternalKeyboard"]
-                            options:0 owner:self usingBlock:^(typeof(self) self) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self _updateStyleFromPreferences:YES];
-        });
-    }];
+//    [UserPreferences.shared observe:@[@"hideStatusBar"] options:0 owner:self usingBlock:^(typeof(self) self) {
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [self setNeedsStatusBarAppearanceUpdate];
+//        });
+//    }];
+//    [UserPreferences.shared observe:@[@"colorScheme", @"theme", @"hideExtraKeysWithExternalKeyboard"]
+//                            options:0 owner:self usingBlock:^(typeof(self) self) {
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [self _updateStyleFromPreferences:YES];
+//        });
+//    }];
     [self _updateBadge];
     
     
@@ -786,7 +786,7 @@
 }
 
 - (int)startSession {
-    NSArray<NSString *> *command = UserPreferences.shared.launchCommand;
+//    NSArray<NSString *> *command = UserPreferences.shared.launchCommand;
     
 #if !ISH_LINUX
     int err = become_new_init_child();
@@ -806,10 +806,11 @@
         return err;
     tty_release(tty);
     
-    char argv[4096];
-    [Terminal convertCommand:command toArgs:argv limitSize:sizeof(argv)];
-    const char *envp = "TERM=xterm-256color\0";
-    err = do_execve(command[0].UTF8String, command.count, argv, envp);
+//    char argv[4096];
+//    [Terminal convertCommand:command toArgs:argv limitSize:sizeof(argv)];
+//    const char *envp = "TERM=xterm-256color\0";
+//    err = do_execve(command[0].UTF8String, command.count, argv, envp);
+    err = do_execve("/bin/login", 3, "/bin/login\0-f\0root\0", "TERM=xterm-256color\0");
     if (err < 0)
         return err;
     self.sessionPid = current->pid;
@@ -889,39 +890,39 @@
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if (object == [UserPreferences shared]) {
-        [self _updateStyleFromPreferences:YES];
-    } else {
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-    }
+//    if (object == [UserPreferences shared]) {
+//        [self _updateStyleFromPreferences:YES];
+//    } else {
+//        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+//    }
 }
 
 - (void)_updateStyleFromPreferences:(BOOL)animated {
-    NSAssert(NSThread.isMainThread, @"This method needs to be called on the main thread");
-    NSTimeInterval duration = animated ? 0.1 : 0;
-    [UIView animateWithDuration:duration animations:^{
-        self.view.backgroundColor = [[UIColor alloc] ish_initWithHexString:UserPreferences.shared.palette.backgroundColor];
-        UIKeyboardAppearance keyAppearance = UserPreferences.shared.keyboardAppearance;
-        self.termView.keyboardAppearance = keyAppearance;
-        for (BarButton *button in self.barButtons) {
-            button.keyAppearance = keyAppearance;
-        }
-        UIColor *tintColor = keyAppearance == UIKeyboardAppearanceLight ? UIColor.blackColor : UIColor.whiteColor;
-        for (UIControl *control in self.barControls) {
-            control.tintColor = tintColor;
-        }
-    }];
-    UIView *oldBarView = self.termView.inputAccessoryView;
-    if (UserPreferences.shared.hideExtraKeysWithExternalKeyboard && self.hasExternalKeyboard) {
-        self.termView.inputAccessoryView = nil;
-    } else {
-        self.termView.inputAccessoryView = self.barView;
-    }
-    if (self.termView.inputAccessoryView != oldBarView && self.termView.isFirstResponder) {
-        self.ignoreKeyboardMotion = YES; // avoid infinite recursion
-        [self.termView reloadInputViews];
-        self.ignoreKeyboardMotion = NO;
-    }
+//    NSAssert(NSThread.isMainThread, @"This method needs to be called on the main thread");
+//    NSTimeInterval duration = animated ? 0.1 : 0;
+//    [UIView animateWithDuration:duration animations:^{
+//        self.view.backgroundColor = [[UIColor alloc] ish_initWithHexString:UserPreferences.shared.palette.backgroundColor];
+//        UIKeyboardAppearance keyAppearance = UserPreferences.shared.keyboardAppearance;
+//        self.termView.keyboardAppearance = keyAppearance;
+//        for (BarButton *button in self.barButtons) {
+//            button.keyAppearance = keyAppearance;
+//        }
+//        UIColor *tintColor = keyAppearance == UIKeyboardAppearanceLight ? UIColor.blackColor : UIColor.whiteColor;
+//        for (UIControl *control in self.barControls) {
+//            control.tintColor = tintColor;
+//        }
+//    }];
+//    UIView *oldBarView = self.termView.inputAccessoryView;
+//    if (UserPreferences.shared.hideExtraKeysWithExternalKeyboard && self.hasExternalKeyboard) {
+//        self.termView.inputAccessoryView = nil;
+//    } else {
+//        self.termView.inputAccessoryView = self.barView;
+//    }
+//    if (self.termView.inputAccessoryView != oldBarView && self.termView.isFirstResponder) {
+//        self.ignoreKeyboardMotion = YES; // avoid infinite recursion
+//        [self.termView reloadInputViews];
+//        self.ignoreKeyboardMotion = NO;
+//    }
 }
 - (void)_updateStyleAnimated {
     [self _updateStyleFromPreferences:YES];
@@ -931,13 +932,13 @@
     self.settingsBadge.hidden = !FsNeedsRepositoryUpdate();
 }
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UserPreferences.shared.theme.statusBarStyle;
-}
-
-- (BOOL)prefersStatusBarHidden {
-    return UserPreferences.shared.hideStatusBar;
-}
+//- (UIStatusBarStyle)preferredStatusBarStyle {
+//    return UserPreferences.shared.theme.statusBarStyle;
+//}
+//
+//- (BOOL)prefersStatusBarHidden {
+//    return UserPreferences.shared.hideStatusBar;
+//}
 
 - (void)keyboardDidSomething:(NSNotification *)notification {
     if (self.ignoreKeyboardMotion)
@@ -994,32 +995,32 @@
     }
 }
 
-- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
-    // Hack to resolve a layering mismatch between the the UI and preferences.
-    if (@available(iOS 12.0, *)) {
-        if (previousTraitCollection.userInterfaceStyle != self.traitCollection.userInterfaceStyle) {
-            // Ensure that the relevant things listening for this will update.
-            UserPreferences.shared.colorScheme = UserPreferences.shared.colorScheme;
-        }
-    }
-}
+//- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+//    // Hack to resolve a layering mismatch between the the UI and preferences.
+//    if (@available(iOS 12.0, *)) {
+//        if (previousTraitCollection.userInterfaceStyle != self.traitCollection.userInterfaceStyle) {
+//            // Ensure that the relevant things listening for this will update.
+//            UserPreferences.shared.colorScheme = UserPreferences.shared.colorScheme;
+//        }
+//    }
+//}
 
 #pragma mark Bar
 
-- (void)showAbout:(id)sender {
-    UINavigationController *navigationController = [[UIStoryboard storyboardWithName:@"About" bundle:nil] instantiateInitialViewController];
-    if ([sender isKindOfClass:[UIGestureRecognizer class]]) {
-        UIGestureRecognizer *recognizer = sender;
-        if (recognizer.state == UIGestureRecognizerStateBegan) {
-            AboutViewController *aboutViewController = (AboutViewController *) navigationController.topViewController;
-            aboutViewController.includeDebugPanel = YES;
-        } else {
-            return;
-        }
-    }
-    [self presentViewController:navigationController animated:YES completion:nil];
-    [self.termView resignFirstResponder];
-}
+//- (void)showAbout:(id)sender {
+//    UINavigationController *navigationController = [[UIStoryboard storyboardWithName:@"About" bundle:nil] instantiateInitialViewController];
+//    if ([sender isKindOfClass:[UIGestureRecognizer class]]) {
+//        UIGestureRecognizer *recognizer = sender;
+//        if (recognizer.state == UIGestureRecognizerStateBegan) {
+//            AboutViewController *aboutViewController = (AboutViewController *) navigationController.topViewController;
+//            aboutViewController.includeDebugPanel = YES;
+//        } else {
+//            return;
+//        }
+//    }
+//    [self presentViewController:navigationController animated:YES completion:nil];
+//    [self.termView resignFirstResponder];
+//}
 
 - (void)resizeBar {
     CGSize screen = UIScreen.mainScreen.bounds.size;
@@ -1092,15 +1093,15 @@
 }
 
 
-- (void)pressArrow:(ArrowBarButton *)sender {
-    switch (sender.direction) {
-        case ArrowUp: [self pressKey:[self.terminal arrow:'A']]; break;
-        case ArrowDown: [self pressKey:[self.terminal arrow:'B']]; break;
-        case ArrowLeft: [self pressKey:[self.terminal arrow:'D']]; break;
-        case ArrowRight: [self pressKey:[self.terminal arrow:'C']]; break;
-        case ArrowNone: break;
-    }
-}
+//- (void)pressArrow:(ArrowBarButton *)sender {
+//    switch (sender.direction) {
+//        case ArrowUp: [self pressKey:[self.terminal arrow:'A']]; break;
+//        case ArrowDown: [self pressKey:[self.terminal arrow:'B']]; break;
+//        case ArrowLeft: [self pressKey:[self.terminal arrow:'D']]; break;
+//        case ArrowRight: [self pressKey:[self.terminal arrow:'C']]; break;
+//        case ArrowNone: break;
+//    }
+//}
 
 - (void)switchTerminal:(UIKeyCommand *)sender {
     unsigned i = (unsigned) sender.input.integerValue;
@@ -1149,11 +1150,11 @@
                              modifierFlags:UIKeyModifierCommand
                                     action:@selector(resetFontSize:)
                       discoverabilityTitle:@"Reset Font Size"]];
-        [commands addObject:
-         [UIKeyCommand keyCommandWithInput:@","
-                             modifierFlags:UIKeyModifierCommand
-                                    action:@selector(showAbout:)
-                      discoverabilityTitle:@"Settings"]];
+//        [commands addObject:
+//         [UIKeyCommand keyCommandWithInput:@","
+//                             modifierFlags:UIKeyModifierCommand
+//                                    action:@selector(showAbout:)
+//                      discoverabilityTitle:@"Settings"]];
     }
     return commands;
 }

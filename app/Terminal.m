@@ -7,8 +7,8 @@
 
 #import "Terminal.h"
 #import "DelayedUITask.h"
-#import "UserPreferences.h"
-#include "LinuxInterop.h"
+//#import "UserPreferences.h"
+//#include "LinuxInterop.h"
 #include "fs/devices.h"
 #include "fs/tty.h"
 #include "fs/devices.h"
