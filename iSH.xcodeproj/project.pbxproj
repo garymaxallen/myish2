@@ -348,13 +348,6 @@
 			name = Configs;
 			sourceTree = "<group>";
 		};
-		BB10E5C1248DB961009C7A74 /* Roots */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Roots;
-			sourceTree = "<group>";
-		};
 		BB2D71072354244700A10D1E /* platform */ = {
 			isa = PBXGroup;
 			children = (
@@ -431,7 +424,6 @@
 				BB10E5CC248DBE66009C7A74 /* Roots.h */,
 				BB10E5CD248DBE66009C7A74 /* Roots.m */,
 				BB10E5C2248DBA7B009C7A74 /* fakefs.c */,
-				BB10E5C1248DB961009C7A74 /* Roots */,
 				BB792B611F96D90D00FFB7A4 /* Info.plist */,
 				BB792B621F96D90D00FFB7A4 /* main.m */,
 				BB0B848D2586A4B100208600 /* Configs */,
