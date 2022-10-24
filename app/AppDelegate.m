@@ -28,9 +28,9 @@
 #include "fs/devices.h"
 #include "fs/path.h"
 
-#if ISH_LINUX
-#import "LinuxInterop.h"
-#endif
+//#if ISH_LINUX
+//#import "LinuxInterop.h"
+//#endif
 
 @interface AppDelegate ()
 
