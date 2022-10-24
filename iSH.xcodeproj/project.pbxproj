@@ -268,7 +268,6 @@
 		BB28C7522689522700BDC834 /* ProjectReleaseLinux.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ProjectReleaseLinux.xcconfig; sourceTree = "<group>"; };
 		BB28C7532689522C00BDC834 /* ProjectDebugLinux.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ProjectDebugLinux.xcconfig; sourceTree = "<group>"; };
 		BB28C755268956C900BDC834 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		BB2B4DAB231D94C300CB578B /* hterm_all.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = hterm_all.js; path = ../../deps/libapps/hterm/dist/js/hterm_all.js; sourceTree = "<group>"; };
 		BB38597627BCEC70000A1082 /* circular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circular.png; sourceTree = "<group>"; };
 		BB38597927BCEC78000A1082 /* dollarblock1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dollarblock1.png; sourceTree = "<group>"; };
 		BB38597A27BCEC78000A1082 /* dollarblock2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dollarblock2.png; sourceTree = "<group>"; };
@@ -516,7 +515,6 @@
 				BB4A53A91FAA496700A72ACE /* term.html */,
 				BB4A539C1FAA490C00A72ACE /* term.js */,
 				BB4A53AF1FAA787900A72ACE /* term.css */,
-				BB2B4DAB231D94C300CB578B /* hterm_all.js */,
 			);
 			path = terminal;
 			sourceTree = "<group>";
