@@ -297,14 +297,6 @@
 			path = interp;
 			sourceTree = "<group>";
 		};
-		BB0B848D2586A4B100208600 /* Configs */ = {
-			isa = PBXGroup;
-			children = (
-				BB0B85A52586F1E100208600 /* ProjectRelease.xcconfig */,
-			);
-			name = Configs;
-			sourceTree = "<group>";
-		};
 		BB2D71072354244700A10D1E /* platform */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,7 +373,7 @@
 				BB10E5C2248DBA7B009C7A74 /* fakefs.c */,
 				BB792B611F96D90D00FFB7A4 /* Info.plist */,
 				BB792B621F96D90D00FFB7A4 /* main.m */,
-				BB0B848D2586A4B100208600 /* Configs */,
+				BB0B85A52586F1E100208600 /* ProjectRelease.xcconfig */,
 			);
 			path = app;
 			sourceTree = "<group>";
