@@ -1,4 +1,3 @@
-//#include "iSH.xcconfig"
 ROOT_BUNDLE_IDENTIFIER = app.ish.iSH
 
 MARKETING_VERSION = 1.2.4
