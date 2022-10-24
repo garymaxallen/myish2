@@ -11,37 +11,26 @@
 		63021CA42902D6790001E3E0 /* libish_emu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63021CA12902D6790001E3E0 /* libish_emu.a */; };
 		63021CA52902D6790001E3E0 /* libish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63021CA22902D6790001E3E0 /* libish.a */; };
 		63021CA62902D6790001E3E0 /* libfakefs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63021CA32902D6790001E3E0 /* libfakefs.a */; };
-		632B84E729067FCA006E182F /* PasteboardDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 650B337322EA235C00B4C03E /* PasteboardDevice.m */; };
-		632B84E829067FCA006E182F /* LocationDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = BB235533235D488400139E00 /* LocationDevice.m */; };
-		632B84E929067FCA006E182F /* iOSFS.m in Sources */ = {isa = PBXBuildFile; fileRef = 408A2639236440F8008A4E81 /* iOSFS.m */; };
+		632B84EA29068296006E182F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB792B541F96D90D00FFB7A4 /* AppDelegate.m */; };
+		632B84EB29068296006E182F /* CurrentRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = BB565EA32734F1FB00C93EAE /* CurrentRoot.m */; };
+		632B84EC29068296006E182F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCC9D952365430800424C83 /* SceneDelegate.m */; };
+		632B84ED29068296006E182F /* TerminalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB792B571F96D90D00FFB7A4 /* TerminalViewController.m */; };
+		632B84EE29068296006E182F /* TerminalView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB78AB2A1FAD22440013E782 /* TerminalView.m */; };
+		632B84EF29068296006E182F /* Terminal.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0FC5911F980A6B00803272 /* Terminal.m */; };
+		632B84F029068296006E182F /* ScrollbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB23F58C231E1D1400585522 /* ScrollbarView.m */; };
+		632B84F129068296006E182F /* DelayedUITask.m in Sources */ = {isa = PBXBuildFile; fileRef = BB455E101FB37F6600AFB48B /* DelayedUITask.m */; };
+		632B84F229068296006E182F /* PasteboardDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 650B337322EA235C00B4C03E /* PasteboardDevice.m */; };
+		632B84F329068296006E182F /* LocationDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = BB235533235D488400139E00 /* LocationDevice.m */; };
+		632B84F429068296006E182F /* iOSFS.m in Sources */ = {isa = PBXBuildFile; fileRef = 408A2639236440F8008A4E81 /* iOSFS.m */; };
+		632B84F529068296006E182F /* Roots.m in Sources */ = {isa = PBXBuildFile; fileRef = BB10E5CD248DBE66009C7A74 /* Roots.m */; };
+		632B84F629068296006E182F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB792B621F96D90D00FFB7A4 /* main.m */; };
+		632B84F7290682A7006E182F /* fakefs.c in Sources */ = {isa = PBXBuildFile; fileRef = BB10E5C2248DBA7B009C7A74 /* fakefs.c */; };
 		BB235537235D49B300139E00 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB235536235D49B300139E00 /* CoreLocation.framework */; };
-		BB28C79526896B1F00BDC834 /* TerminalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB792B571F96D90D00FFB7A4 /* TerminalViewController.m */; };
-		BB28C79726896B1F00BDC834 /* TerminalView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB78AB2A1FAD22440013E782 /* TerminalView.m */; };
-		BB28C79826896B1F00BDC834 /* ScrollbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB23F58C231E1D1400585522 /* ScrollbarView.m */; };
-		BB28C79926896B1F00BDC834 /* DelayedUITask.m in Sources */ = {isa = PBXBuildFile; fileRef = BB455E101FB37F6600AFB48B /* DelayedUITask.m */; };
-		BB28C79A26896B1F00BDC834 /* Terminal.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0FC5911F980A6B00803272 /* Terminal.m */; };
-		BB28C79D26896B1F00BDC834 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCC9D952365430800424C83 /* SceneDelegate.m */; };
-		BB28C7AE26896C1D00BDC834 /* libiSHApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBEF191E26806364001225BD /* libiSHApp.a */; };
-		BB28C7B226896C4600BDC834 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB792B621F96D90D00FFB7A4 /* main.m */; };
-		BB28C7BF2689799800BDC834 /* Roots.m in Sources */ = {isa = PBXBuildFile; fileRef = BB10E5CD248DBE66009C7A74 /* Roots.m */; };
 		BB6DB261216435340047A611 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BB6DB260216435330047A611 /* libiconv.tbd */; };
-		BB77636726E486A7008DB44A /* fakefs.c in Sources */ = {isa = PBXBuildFile; fileRef = BB10E5C2248DBA7B009C7A74 /* fakefs.c */; };
 		BBA8E2C1236FF5EA00515F76 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA8E2C0236FF5EA00515F76 /* SystemConfiguration.framework */; };
 		BBAEE339249B58E80069EBB5 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAEE338249B58E80069EBB5 /* libbz2.tbd */; };
-		BBC3863F276817AD00CC8C2E /* CurrentRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = BB565EA32734F1FB00C93EAE /* CurrentRoot.m */; };
-		BBECF3BC26913F1600DEC937 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB792B541F96D90D00FFB7A4 /* AppDelegate.m */; };
 		BBFB55662158644C00DFE6DE /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BBFB55652158644C00DFE6DE /* libresolv.tbd */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		BBEF1928268063FD001225BD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BB792B461F96D8E000FFB7A4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BBEF191D26806364001225BD;
-			remoteInfo = libiSH;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		408A2639236440F8008A4E81 /* iOSFS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSFS.m; sourceTree = "<group>"; };
@@ -247,7 +236,6 @@
 		BBCC9D942365430800424C83 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		BBCC9D952365430800424C83 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		BBECF3BA2691379100DEC937 /* StaticLibLinux.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLibLinux.xcconfig; sourceTree = "<group>"; };
-		BBEF191E26806364001225BD /* libiSHApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiSHApp.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBEF192C26806546001225BD /* AppLib.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppLib.xcconfig; sourceTree = "<group>"; };
 		BBEF19BA26806D7E001225BD /* Linux.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Linux.xcconfig; sourceTree = "<group>"; };
 		BBFB2CDA259028DC00545EAB /* StaticLib.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLib.xcconfig; sourceTree = "<group>"; };
@@ -263,7 +251,6 @@
 				63021CA52902D6790001E3E0 /* libish.a in Frameworks */,
 				63021CA62902D6790001E3E0 /* libfakefs.a in Frameworks */,
 				63021CA02902D6020001E3E0 /* libarchive.a in Frameworks */,
-				BB28C7AE26896C1D00BDC834 /* libiSHApp.a in Frameworks */,
 				BB235537235D49B300139E00 /* CoreLocation.framework in Frameworks */,
 				BBA8E2C1236FF5EA00515F76 /* SystemConfiguration.framework in Frameworks */,
 				BBAEE339249B58E80069EBB5 /* libbz2.tbd in Frameworks */,
@@ -391,7 +378,6 @@
 			isa = PBXGroup;
 			children = (
 				BB792B501F96D90D00FFB7A4 /* iSH.app */,
-				BBEF191E26806364001225BD /* libiSHApp.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -623,27 +609,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				BBEF1929268063FD001225BD /* PBXTargetDependency */,
 			);
 			name = iSH;
 			productName = iSH;
 			productReference = BB792B501F96D90D00FFB7A4 /* iSH.app */;
 			productType = "com.apple.product-type.application";
-		};
-		BBEF191D26806364001225BD /* libiSHApp */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BBEF192626806364001225BD /* Build configuration list for PBXNativeTarget "libiSHApp" */;
-			buildPhases = (
-				BBEF191A26806364001225BD /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = libiSHApp;
-			productName = libiSH;
-			productReference = BBEF191E26806364001225BD /* libiSHApp.a */;
-			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -663,9 +633,6 @@
 							};
 						};
 					};
-					BBEF191D26806364001225BD = {
-						CreatedOnToolsVersion = 13.0;
-					};
 				};
 			};
 			buildConfigurationList = BB792B491F96D8E000FFB7A4 /* Build configuration list for PBXProject "iSH" */;
@@ -682,7 +649,6 @@
 			projectRoot = "";
 			targets = (
 				BB792B4F1F96D90D00FFB7A4 /* iSH */,
-				BBEF191D26806364001225BD /* libiSHApp */,
 			);
 		};
 /* End PBXProject section */
@@ -692,39 +658,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BBEF191A26806364001225BD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				632B84E829067FCA006E182F /* LocationDevice.m in Sources */,
-				BB28C7B226896C4600BDC834 /* main.m in Sources */,
-				632B84E929067FCA006E182F /* iOSFS.m in Sources */,
-				BB28C79526896B1F00BDC834 /* TerminalViewController.m in Sources */,
-				632B84E729067FCA006E182F /* PasteboardDevice.m in Sources */,
-				BBC3863F276817AD00CC8C2E /* CurrentRoot.m in Sources */,
-				BB28C79726896B1F00BDC834 /* TerminalView.m in Sources */,
-				BB28C79826896B1F00BDC834 /* ScrollbarView.m in Sources */,
-				BB28C79926896B1F00BDC834 /* DelayedUITask.m in Sources */,
-				BB28C7BF2689799800BDC834 /* Roots.m in Sources */,
-				BB28C79A26896B1F00BDC834 /* Terminal.m in Sources */,
-				BB28C79D26896B1F00BDC834 /* SceneDelegate.m in Sources */,
-				BBECF3BC26913F1600DEC937 /* AppDelegate.m in Sources */,
-				BB77636726E486A7008DB44A /* fakefs.c in Sources */,
+				632B84F7290682A7006E182F /* fakefs.c in Sources */,
+				632B84EA29068296006E182F /* AppDelegate.m in Sources */,
+				632B84EB29068296006E182F /* CurrentRoot.m in Sources */,
+				632B84EC29068296006E182F /* SceneDelegate.m in Sources */,
+				632B84ED29068296006E182F /* TerminalViewController.m in Sources */,
+				632B84EE29068296006E182F /* TerminalView.m in Sources */,
+				632B84EF29068296006E182F /* Terminal.m in Sources */,
+				632B84F029068296006E182F /* ScrollbarView.m in Sources */,
+				632B84F129068296006E182F /* DelayedUITask.m in Sources */,
+				632B84F229068296006E182F /* PasteboardDevice.m in Sources */,
+				632B84F329068296006E182F /* LocationDevice.m in Sources */,
+				632B84F429068296006E182F /* iOSFS.m in Sources */,
+				632B84F529068296006E182F /* Roots.m in Sources */,
+				632B84F629068296006E182F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		BBEF1929268063FD001225BD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BBEF191D26806364001225BD /* libiSHApp */;
-			targetProxy = BBEF1928268063FD001225BD /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		BB792B4A1F96D8E000FFB7A4 /* Debug-ApplePleaseFixFB19282108 */ = {
@@ -784,27 +735,6 @@
 			};
 			name = DebugLinux;
 		};
-		BB7F62082688EAB5003C0220 /* DebugLinux */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BBEF192C26806546001225BD /* AppLib.xcconfig */;
-			buildSettings = {
-			};
-			name = DebugLinux;
-		};
-		BBEF192426806364001225BD /* Debug-ApplePleaseFixFB19282108 */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BBEF192C26806546001225BD /* AppLib.xcconfig */;
-			buildSettings = {
-			};
-			name = "Debug-ApplePleaseFixFB19282108";
-		};
-		BBEF192526806364001225BD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BBEF192C26806546001225BD /* AppLib.xcconfig */;
-			buildSettings = {
-			};
-			name = Release;
-		};
 		BBEF19AB26806D1F001225BD /* ReleaseLinux */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BB28C7522689522700BDC834 /* ProjectReleaseLinux.xcconfig */;
@@ -821,13 +751,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ish_resources",
 				);
-			};
-			name = ReleaseLinux;
-		};
-		BBEF19AE26806D1F001225BD /* ReleaseLinux */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BBEF192C26806546001225BD /* AppLib.xcconfig */;
-			buildSettings = {
 			};
 			name = ReleaseLinux;
 		};
@@ -852,17 +775,6 @@
 				BB7F62062688EAB5003C0220 /* DebugLinux */,
 				BB792B651F96D90D00FFB7A4 /* Release */,
 				BBEF19AC26806D1F001225BD /* ReleaseLinux */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		BBEF192626806364001225BD /* Build configuration list for PBXNativeTarget "libiSHApp" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BBEF192426806364001225BD /* Debug-ApplePleaseFixFB19282108 */,
-				BB7F62082688EAB5003C0220 /* DebugLinux */,
-				BBEF192526806364001225BD /* Release */,
-				BBEF19AE26806D1F001225BD /* ReleaseLinux */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
