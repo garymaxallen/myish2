@@ -438,9 +438,10 @@
 				BB0FC5911F980A6B00803272 /* Terminal.m */,
 				BB23F58B231E1D1400585522 /* ScrollbarView.h */,
 				BB23F58C231E1D1400585522 /* ScrollbarView.m */,
+				BB455E0F1FB37F6600AFB48B /* DelayedUITask.h */,
+				BB455E101FB37F6600AFB48B /* DelayedUITask.m */,
 				BB235532235D472F00139E00 /* Devices */,
 				BB10E5C1248DB961009C7A74 /* Roots */,
-				BBFB557221586C6600DFE6DE /* Utilities */,
 				BB792B611F96D90D00FFB7A4 /* Info.plist */,
 				BB792B621F96D90D00FFB7A4 /* main.m */,
 				BB0B848D2586A4B100208600 /* Configs */,
@@ -625,15 +626,6 @@
 				497F6C3C254E5C4F00C82F46 /* offsets.c */,
 			);
 			path = jit;
-			sourceTree = "<group>";
-		};
-		BBFB557221586C6600DFE6DE /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				BB455E0F1FB37F6600AFB48B /* DelayedUITask.h */,
-				BB455E101FB37F6600AFB48B /* DelayedUITask.m */,
-			);
-			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
