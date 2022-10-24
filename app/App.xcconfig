@@ -1,4 +1,0 @@
-PRODUCT_NAME = iSH
-PRODUCT_BUNDLE_IDENTIFIER = app.ish.iSH
-INFOPLIST_FILE = app/Info.plist
-HEADER_SEARCH_PATHS = $(inherited) $(SRCROOT) $(SRCROOT)/deps/libarchive/libarchive
