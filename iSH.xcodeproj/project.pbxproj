@@ -11,6 +11,9 @@
 		63021CA42902D6790001E3E0 /* libish_emu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63021CA12902D6790001E3E0 /* libish_emu.a */; };
 		63021CA52902D6790001E3E0 /* libish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63021CA22902D6790001E3E0 /* libish.a */; };
 		63021CA62902D6790001E3E0 /* libfakefs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63021CA32902D6790001E3E0 /* libfakefs.a */; };
+		632B84E729067FCA006E182F /* PasteboardDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 650B337322EA235C00B4C03E /* PasteboardDevice.m */; };
+		632B84E829067FCA006E182F /* LocationDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = BB235533235D488400139E00 /* LocationDevice.m */; };
+		632B84E929067FCA006E182F /* iOSFS.m in Sources */ = {isa = PBXBuildFile; fileRef = 408A2639236440F8008A4E81 /* iOSFS.m */; };
 		BB235537235D49B300139E00 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB235536235D49B300139E00 /* CoreLocation.framework */; };
 		BB28C79526896B1F00BDC834 /* TerminalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB792B571F96D90D00FFB7A4 /* TerminalViewController.m */; };
 		BB28C79726896B1F00BDC834 /* TerminalView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB78AB2A1FAD22440013E782 /* TerminalView.m */; };
@@ -20,9 +23,6 @@
 		BB28C79D26896B1F00BDC834 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCC9D952365430800424C83 /* SceneDelegate.m */; };
 		BB28C7AE26896C1D00BDC834 /* libiSHApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBEF191E26806364001225BD /* libiSHApp.a */; };
 		BB28C7B226896C4600BDC834 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB792B621F96D90D00FFB7A4 /* main.m */; };
-		BB28C7BA268975AA00BDC834 /* iOSFS.m in Sources */ = {isa = PBXBuildFile; fileRef = 408A2639236440F8008A4E81 /* iOSFS.m */; };
-		BB28C7BB268975AE00BDC834 /* LocationDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = BB235533235D488400139E00 /* LocationDevice.m */; };
-		BB28C7BC268975B000BDC834 /* PasteboardDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 650B337322EA235C00B4C03E /* PasteboardDevice.m */; };
 		BB28C7BF2689799800BDC834 /* Roots.m in Sources */ = {isa = PBXBuildFile; fileRef = BB10E5CD248DBE66009C7A74 /* Roots.m */; };
 		BB6DB261216435340047A611 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BB6DB260216435330047A611 /* libiconv.tbd */; };
 		BB77636726E486A7008DB44A /* fakefs.c in Sources */ = {isa = PBXBuildFile; fileRef = BB10E5C2248DBA7B009C7A74 /* fakefs.c */; };
@@ -358,19 +358,6 @@
 			name = Roots;
 			sourceTree = "<group>";
 		};
-		BB235532235D472F00139E00 /* Devices */ = {
-			isa = PBXGroup;
-			children = (
-				650B337222EA235C00B4C03E /* PasteboardDevice.h */,
-				650B337322EA235C00B4C03E /* PasteboardDevice.m */,
-				BB235535235D489400139E00 /* LocationDevice.h */,
-				BB235533235D488400139E00 /* LocationDevice.m */,
-				408A263B23644102008A4E81 /* iOSFS.h */,
-				408A2639236440F8008A4E81 /* iOSFS.m */,
-			);
-			name = Devices;
-			sourceTree = "<group>";
-		};
 		BB2D71072354244700A10D1E /* platform */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,7 +425,12 @@
 				BB23F58C231E1D1400585522 /* ScrollbarView.m */,
 				BB455E0F1FB37F6600AFB48B /* DelayedUITask.h */,
 				BB455E101FB37F6600AFB48B /* DelayedUITask.m */,
-				BB235532235D472F00139E00 /* Devices */,
+				650B337222EA235C00B4C03E /* PasteboardDevice.h */,
+				650B337322EA235C00B4C03E /* PasteboardDevice.m */,
+				BB235535235D489400139E00 /* LocationDevice.h */,
+				BB235533235D488400139E00 /* LocationDevice.m */,
+				408A263B23644102008A4E81 /* iOSFS.h */,
+				408A2639236440F8008A4E81 /* iOSFS.m */,
 				BB10E5C1248DB961009C7A74 /* Roots */,
 				BB792B611F96D90D00FFB7A4 /* Info.plist */,
 				BB792B621F96D90D00FFB7A4 /* main.m */,
@@ -708,9 +700,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB28C7BB268975AE00BDC834 /* LocationDevice.m in Sources */,
-				BB28C7BA268975AA00BDC834 /* iOSFS.m in Sources */,
-				BB28C7BC268975B000BDC834 /* PasteboardDevice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,8 +707,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				632B84E829067FCA006E182F /* LocationDevice.m in Sources */,
 				BB28C7B226896C4600BDC834 /* main.m in Sources */,
+				632B84E929067FCA006E182F /* iOSFS.m in Sources */,
 				BB28C79526896B1F00BDC834 /* TerminalViewController.m in Sources */,
+				632B84E729067FCA006E182F /* PasteboardDevice.m in Sources */,
 				BBC3863F276817AD00CC8C2E /* CurrentRoot.m in Sources */,
 				BB28C79726896B1F00BDC834 /* TerminalView.m in Sources */,
 				BB28C79826896B1F00BDC834 /* ScrollbarView.m in Sources */,
