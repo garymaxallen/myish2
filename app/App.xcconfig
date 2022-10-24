@@ -1,4 +1,4 @@
-#include "iOS.xcconfig"
+//#include "iOS.xcconfig"
 
 PRODUCT_NAME = iSH
 PRODUCT_BUNDLE_IDENTIFIER = $(PRODUCT_BUNDLE_IDENTIFIER)
