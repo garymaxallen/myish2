@@ -16,7 +16,6 @@
 		63021CA62902D6790001E3E0 /* libfakefs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63021CA32902D6790001E3E0 /* libfakefs.a */; };
 		BB0F552E239F8A790032A2A1 /* Icons.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB0F552D239F8A790032A2A1 /* Icons.plist */; };
 		BB10E5D0248DC21D009C7A74 /* Roots.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB10E5CF248DC21D009C7A74 /* Roots.storyboard */; };
-		BB123ACE26C9F13500419CDA /* IOSCalls.m in Sources */ = {isa = PBXBuildFile; fileRef = BB123ACD26C9F13500419CDA /* IOSCalls.m */; };
 		BB235537235D49B300139E00 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB235536235D49B300139E00 /* CoreLocation.framework */; };
 		BB28C79226896B1F00BDC834 /* AboutAppearanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A28E4E9219A8B670073D200 /* AboutAppearanceViewController.m */; };
 		BB28C79326896B1F00BDC834 /* AltIconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB267FA523A48F1500ED7CAF /* AltIconViewController.m */; };
@@ -33,7 +32,6 @@
 		BB28C79F26896B1F00BDC834 /* PassthroughView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB149E7F256DC97C00F57815 /* PassthroughView.m */; };
 		BB28C7A026896B1F00BDC834 /* UserPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 8632A7BE219A59FB00F02325 /* UserPreferences.m */; };
 		BB28C7A126896B1F00BDC834 /* RootsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB10E5D2248DCFEA009C7A74 /* RootsTableViewController.m */; };
-		BB28C7A326896B1F00BDC834 /* BarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BB60F55121573FCA003A4E52 /* BarButton.m */; };
 		BB28C7A426896B1F00BDC834 /* AppGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9C7B84240A240E00F5D4F0 /* AppGroup.m */; };
 		BB28C7A526896B1F00BDC834 /* UIApplication+OpenURL.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFB557B215878C600DFE6DE /* UIApplication+OpenURL.m */; };
 		BB28C7A626896B1F00BDC834 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFB5578215876CD00DFE6DE /* AboutViewController.m */; };
@@ -41,7 +39,6 @@
 		BB28C7A826896B1F00BDC834 /* NSObject+SaneKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCED896255BB65A00CA0701 /* NSObject+SaneKVO.m */; };
 		BB28C7AE26896C1D00BDC834 /* libiSHApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBEF191E26806364001225BD /* libiSHApp.a */; };
 		BB28C7B226896C4600BDC834 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB792B621F96D90D00FFB7A4 /* main.m */; };
-		BB28C7B826896CE600BDC834 /* ArrowBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFB557F21587B6800DFE6DE /* ArrowBarButton.m */; };
 		BB28C7BA268975AA00BDC834 /* iOSFS.m in Sources */ = {isa = PBXBuildFile; fileRef = 408A2639236440F8008A4E81 /* iOSFS.m */; };
 		BB28C7BB268975AE00BDC834 /* LocationDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = BB235533235D488400139E00 /* LocationDevice.m */; };
 		BB28C7BC268975B000BDC834 /* PasteboardDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 650B337322EA235C00B4C03E /* PasteboardDevice.m */; };
@@ -284,8 +281,6 @@
 		BB10E5CF248DC21D009C7A74 /* Roots.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Roots.storyboard; sourceTree = "<group>"; };
 		BB10E5D1248DCFEA009C7A74 /* RootsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootsTableViewController.h; sourceTree = "<group>"; };
 		BB10E5D2248DCFEA009C7A74 /* RootsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootsTableViewController.m; sourceTree = "<group>"; };
-		BB123ACB26C9EFD900419CDA /* LinuxTTY.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LinuxTTY.c; sourceTree = "<group>"; };
-		BB123ACD26C9F13500419CDA /* IOSCalls.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOSCalls.m; sourceTree = "<group>"; };
 		BB13F4DC21C5770000343E17 /* NSError+ISHErrno.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSError+ISHErrno.h"; sourceTree = "<group>"; };
 		BB13F4DD21C5770000343E17 /* NSError+ISHErrno.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSError+ISHErrno.m"; sourceTree = "<group>"; };
 		BB149E7E256DC97C00F57815 /* PassthroughView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PassthroughView.h; sourceTree = "<group>"; };
@@ -321,8 +316,6 @@
 		BB4A923124EDA560002F5A96 /* 3d.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3d.png; sourceTree = "<group>"; };
 		BB565EA32734F1FB00C93EAE /* CurrentRoot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentRoot.m; sourceTree = "<group>"; };
 		BB565EA52734F22D00C93EAE /* CurrentRoot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentRoot.h; sourceTree = "<group>"; };
-		BB60F55021573FCA003A4E52 /* BarButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarButton.h; sourceTree = "<group>"; };
-		BB60F55121573FCA003A4E52 /* BarButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarButton.m; sourceTree = "<group>"; };
 		BB6DB260216435330047A611 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		BB78AB291FAD22440013E782 /* TerminalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TerminalView.h; sourceTree = "<group>"; };
 		BB78AB2A1FAD22440013E782 /* TerminalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TerminalView.m; sourceTree = "<group>"; };
@@ -349,7 +342,6 @@
 		BB88F49B2154760800A341FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB88F49C2154760800A341FD /* iSHFileProvider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iSHFileProvider.entitlements; sourceTree = "<group>"; };
 		BB88F4A4215476BA00A341FD /* iSH.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iSH.entitlements; sourceTree = "<group>"; };
-		BB8C3AFD26B7B8AF00E38DDC /* fakefs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = fakefs.c; path = linux/fakefs.c; sourceTree = SOURCE_ROOT; };
 		BB9C7B84240A240E00F5D4F0 /* AppGroup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppGroup.m; sourceTree = "<group>"; };
 		BB9C7B86240A29DE00F5D4F0 /* AppGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppGroup.h; sourceTree = "<group>"; };
 		BB9C7B88240A343400F5D4F0 /* iSH.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = iSH.xcconfig; path = app/iSH.xcconfig; sourceTree = "<group>"; };
@@ -372,11 +364,7 @@
 		BBCC9D952365430800424C83 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		BBCED895255BB65A00CA0701 /* NSObject+SaneKVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+SaneKVO.h"; sourceTree = "<group>"; };
 		BBCED896255BB65A00CA0701 /* NSObject+SaneKVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SaneKVO.m"; sourceTree = "<group>"; };
-		BBECF39B2691311D00DEC937 /* LinuxInterop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinuxInterop.h; sourceTree = "<group>"; };
-		BBECF39D2691313B00DEC937 /* LinuxInterop.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LinuxInterop.c; sourceTree = "<group>"; };
 		BBECF3BA2691379100DEC937 /* StaticLibLinux.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLibLinux.xcconfig; sourceTree = "<group>"; };
-		BBEEA9E7277D25090069495B /* LinuxRoot.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LinuxRoot.c; sourceTree = "<group>"; };
-		BBEEA9E9277DAB400069495B /* LinuxPTY.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = LinuxPTY.c; sourceTree = "<group>"; };
 		BBEF191E26806364001225BD /* libiSHApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiSHApp.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBEF192C26806546001225BD /* AppLib.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppLib.xcconfig; sourceTree = "<group>"; };
 		BBEF19BA26806D7E001225BD /* Linux.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Linux.xcconfig; sourceTree = "<group>"; };
@@ -388,8 +376,6 @@
 		BBFB5578215876CD00DFE6DE /* AboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		BBFB557A215878C600DFE6DE /* UIApplication+OpenURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+OpenURL.h"; sourceTree = "<group>"; };
 		BBFB557B215878C600DFE6DE /* UIApplication+OpenURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+OpenURL.m"; sourceTree = "<group>"; };
-		BBFB557E21587B6800DFE6DE /* ArrowBarButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArrowBarButton.h; sourceTree = "<group>"; };
-		BBFB557F21587B6800DFE6DE /* ArrowBarButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArrowBarButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -614,14 +600,12 @@
 				BBCC9D952365430800424C83 /* SceneDelegate.m */,
 				BB792B561F96D90D00FFB7A4 /* TerminalViewController.h */,
 				BB792B571F96D90D00FFB7A4 /* TerminalViewController.m */,
-				BBFB557D21587B2B00DFE6DE /* Bar */,
 				BB78AB291FAD22440013E782 /* TerminalView.h */,
 				BB78AB2A1FAD22440013E782 /* TerminalView.m */,
 				BB0FC5901F980A6B00803272 /* Terminal.h */,
 				BB0FC5911F980A6B00803272 /* Terminal.m */,
 				BB23F58B231E1D1400585522 /* ScrollbarView.h */,
 				BB23F58C231E1D1400585522 /* ScrollbarView.m */,
-				BBECF39C2691312500DEC937 /* LinuxInterop */,
 				BB4A53991FAA40FD00A72ACE /* terminal */,
 				BB235532235D472F00139E00 /* Devices */,
 				BBFB557321586C7600DFE6DE /* About */,
@@ -834,20 +818,6 @@
 			path = FileProvider;
 			sourceTree = "<group>";
 		};
-		BBECF39C2691312500DEC937 /* LinuxInterop */ = {
-			isa = PBXGroup;
-			children = (
-				BBECF39B2691311D00DEC937 /* LinuxInterop.h */,
-				BB123ACD26C9F13500419CDA /* IOSCalls.m */,
-				BBECF39D2691313B00DEC937 /* LinuxInterop.c */,
-				BB123ACB26C9EFD900419CDA /* LinuxTTY.c */,
-				BBEEA9E9277DAB400069495B /* LinuxPTY.c */,
-				BBEEA9E7277D25090069495B /* LinuxRoot.c */,
-				BB8C3AFD26B7B8AF00E38DDC /* fakefs.c */,
-			);
-			name = LinuxInterop;
-			sourceTree = "<group>";
-		};
 		BBFB557221586C6600DFE6DE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -895,17 +865,6 @@
 				8632A7BE219A59FB00F02325 /* UserPreferences.m */,
 			);
 			name = About;
-			sourceTree = "<group>";
-		};
-		BBFB557D21587B2B00DFE6DE /* Bar */ = {
-			isa = PBXGroup;
-			children = (
-				BB60F55021573FCA003A4E52 /* BarButton.h */,
-				BB60F55121573FCA003A4E52 /* BarButton.m */,
-				BBFB557E21587B6800DFE6DE /* ArrowBarButton.h */,
-				BBFB557F21587B6800DFE6DE /* ArrowBarButton.m */,
-			);
-			name = Bar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1047,7 +1006,6 @@
 				496C7AB227CC697E005D7613 /* Theme.m in Sources */,
 				BB28C79426896B1F00BDC834 /* AboutNavigationController.m in Sources */,
 				BB28C79526896B1F00BDC834 /* TerminalViewController.m in Sources */,
-				BB123ACE26C9F13500419CDA /* IOSCalls.m in Sources */,
 				BBC3863F276817AD00CC8C2E /* CurrentRoot.m in Sources */,
 				BB28C79626896B1F00BDC834 /* ProgressReportViewController.m in Sources */,
 				BB28C79726896B1F00BDC834 /* TerminalView.m in Sources */,
@@ -1062,7 +1020,6 @@
 				BB28C79F26896B1F00BDC834 /* PassthroughView.m in Sources */,
 				BB28C7A026896B1F00BDC834 /* UserPreferences.m in Sources */,
 				BB28C7A126896B1F00BDC834 /* RootsTableViewController.m in Sources */,
-				BB28C7A326896B1F00BDC834 /* BarButton.m in Sources */,
 				BB28C7A426896B1F00BDC834 /* AppGroup.m in Sources */,
 				BBECF3BC26913F1600DEC937 /* AppDelegate.m in Sources */,
 				BB28C7A526896B1F00BDC834 /* UIApplication+OpenURL.m in Sources */,
@@ -1071,7 +1028,6 @@
 				BB28C7A826896B1F00BDC834 /* NSObject+SaneKVO.m in Sources */,
 				496C7AB327CC734D005D7613 /* ThemesViewController.m in Sources */,
 				BB77636726E486A7008DB44A /* fakefs.c in Sources */,
-				BB28C7B826896CE600BDC834 /* ArrowBarButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
