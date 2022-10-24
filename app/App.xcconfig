@@ -7,4 +7,5 @@ INFOPLIST_FILE = app/Info.plist
 //CODE_SIGN_ENTITLEMENTS = app/iSH.entitlements
 
 HEADER_SEARCH_PATHS = $(inherited) $(SRCROOT) $(SRCROOT)/deps/libarchive/libarchive
+
 //OTHER_LDFLAGS = -ObjC $(LINUX_APP_LDFLAGS)
