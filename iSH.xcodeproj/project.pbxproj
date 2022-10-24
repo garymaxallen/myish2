@@ -257,8 +257,6 @@
 		BB10E5CF248DC21D009C7A74 /* Roots.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Roots.storyboard; sourceTree = "<group>"; };
 		BB10E5D1248DCFEA009C7A74 /* RootsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootsTableViewController.h; sourceTree = "<group>"; };
 		BB10E5D2248DCFEA009C7A74 /* RootsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootsTableViewController.m; sourceTree = "<group>"; };
-		BB13F4DC21C5770000343E17 /* NSError+ISHErrno.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSError+ISHErrno.h"; sourceTree = "<group>"; };
-		BB13F4DD21C5770000343E17 /* NSError+ISHErrno.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSError+ISHErrno.m"; sourceTree = "<group>"; };
 		BB149E7E256DC97C00F57815 /* PassthroughView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PassthroughView.h; sourceTree = "<group>"; };
 		BB149E7F256DC97C00F57815 /* PassthroughView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PassthroughView.m; sourceTree = "<group>"; };
 		BB1B9A4223A5E96900414052 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = app/Icons/icon.png; sourceTree = SOURCE_ROOT; };
@@ -303,14 +301,6 @@
 		BB7D933B2087C2880008DA78 /* misc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = misc.h; sourceTree = "<group>"; };
 		BB7D93812087C2890008DA78 /* debug.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
 		BB7D93822087C2890008DA78 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		BB88F4922154760800A341FD /* FileProviderExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileProviderExtension.h; sourceTree = "<group>"; };
-		BB88F4932154760800A341FD /* FileProviderExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileProviderExtension.m; sourceTree = "<group>"; };
-		BB88F4952154760800A341FD /* FileProviderItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileProviderItem.h; sourceTree = "<group>"; };
-		BB88F4962154760800A341FD /* FileProviderItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileProviderItem.m; sourceTree = "<group>"; };
-		BB88F4982154760800A341FD /* FileProviderEnumerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileProviderEnumerator.h; sourceTree = "<group>"; };
-		BB88F4992154760800A341FD /* FileProviderEnumerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileProviderEnumerator.m; sourceTree = "<group>"; };
-		BB88F49B2154760800A341FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BB88F49C2154760800A341FD /* iSHFileProvider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iSHFileProvider.entitlements; sourceTree = "<group>"; };
 		BB88F4A4215476BA00A341FD /* iSH.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iSH.entitlements; sourceTree = "<group>"; };
 		BB9C7B84240A240E00F5D4F0 /* AppGroup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppGroup.m; sourceTree = "<group>"; };
 		BB9C7B86240A29DE00F5D4F0 /* AppGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppGroup.h; sourceTree = "<group>"; };
@@ -582,7 +572,6 @@
 				BB792B621F96D90D00FFB7A4 /* main.m */,
 				BB0B848D2586A4B100208600 /* Configs */,
 				BB88F4A4215476BA00A341FD /* iSH.entitlements */,
-				BB88F4912154760800A341FD /* FileProvider */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -763,23 +752,6 @@
 				497F6C3C254E5C4F00C82F46 /* offsets.c */,
 			);
 			path = jit;
-			sourceTree = "<group>";
-		};
-		BB88F4912154760800A341FD /* FileProvider */ = {
-			isa = PBXGroup;
-			children = (
-				BB88F4922154760800A341FD /* FileProviderExtension.h */,
-				BB88F4932154760800A341FD /* FileProviderExtension.m */,
-				BB88F4952154760800A341FD /* FileProviderItem.h */,
-				BB88F4962154760800A341FD /* FileProviderItem.m */,
-				BB88F4982154760800A341FD /* FileProviderEnumerator.h */,
-				BB88F4992154760800A341FD /* FileProviderEnumerator.m */,
-				BB13F4DC21C5770000343E17 /* NSError+ISHErrno.h */,
-				BB13F4DD21C5770000343E17 /* NSError+ISHErrno.m */,
-				BB88F49B2154760800A341FD /* Info.plist */,
-				BB88F49C2154760800A341FD /* iSHFileProvider.entitlements */,
-			);
-			path = FileProvider;
 			sourceTree = "<group>";
 		};
 		BBFB557221586C6600DFE6DE /* Utilities */ = {
