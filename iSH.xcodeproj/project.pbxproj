@@ -638,13 +638,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		BB792B4A1F96D8E000FFB7A4 /* Debug-ApplePleaseFixFB19282108 */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CURRENT_PROJECT_VERSION = 415;
-			};
-			name = "Debug-ApplePleaseFixFB19282108";
-		};
 		BB792B4B1F96D8E000FFB7A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BB0B85A52586F1E100208600 /* ProjectRelease.xcconfig */;
@@ -652,16 +645,6 @@
 				CURRENT_PROJECT_VERSION = 415;
 			};
 			name = Release;
-		};
-		BB792B641F96D90D00FFB7A4 /* Debug-ApplePleaseFixFB19282108 */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/ish_resources",
-				);
-			};
-			name = "Debug-ApplePleaseFixFB19282108";
 		};
 		BB792B651F96D90D00FFB7A4 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -673,50 +656,13 @@
 			};
 			name = Release;
 		};
-		BB7F62052688EAB5003C0220 /* DebugLinux */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CURRENT_PROJECT_VERSION = 415;
-			};
-			name = DebugLinux;
-		};
-		BB7F62062688EAB5003C0220 /* DebugLinux */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/ish_resources",
-				);
-			};
-			name = DebugLinux;
-		};
-		BBEF19AB26806D1F001225BD /* ReleaseLinux */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CURRENT_PROJECT_VERSION = 415;
-			};
-			name = ReleaseLinux;
-		};
-		BBEF19AC26806D1F001225BD /* ReleaseLinux */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/ish_resources",
-				);
-			};
-			name = ReleaseLinux;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		BB792B491F96D8E000FFB7A4 /* Build configuration list for PBXProject "iSH" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BB792B4A1F96D8E000FFB7A4 /* Debug-ApplePleaseFixFB19282108 */,
-				BB7F62052688EAB5003C0220 /* DebugLinux */,
 				BB792B4B1F96D8E000FFB7A4 /* Release */,
-				BBEF19AB26806D1F001225BD /* ReleaseLinux */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -724,10 +670,7 @@
 		BB792B661F96D90D00FFB7A4 /* Build configuration list for PBXNativeTarget "iSH" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BB792B641F96D90D00FFB7A4 /* Debug-ApplePleaseFixFB19282108 */,
-				BB7F62062688EAB5003C0220 /* DebugLinux */,
 				BB792B651F96D90D00FFB7A4 /* Release */,
-				BBEF19AC26806D1F001225BD /* ReleaseLinux */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
