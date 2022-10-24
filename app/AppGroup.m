@@ -103,5 +103,6 @@ NSArray<NSString *> *CurrentAppGroups(void) {
 
 NSURL *ContainerURL() {
     NSString *appGroup = CurrentAppGroups()[0];
+    NSLog(@"com.mycom.mytest2.log: appGroup: %@", appGroup);
     return [NSFileManager.defaultManager containerURLForSecurityApplicationGroupIdentifier:appGroup];
 }

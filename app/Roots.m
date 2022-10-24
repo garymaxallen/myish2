@@ -5,17 +5,31 @@
 //  Created by Theodore Dubois on 6/7/20.
 //
 
-#import <FileProvider/FileProvider.h>
+//#import <FileProvider/FileProvider.h>
 #import "Roots.h"
-#import "AppGroup.h"
-#import "NSObject+SaneKVO.h"
+//#import "AppGroup.h"
+//#import "NSObject+SaneKVO.h"
 #include "tools/fakefs.h"
+
+//static NSURL *RootsDir() {
+//    static NSURL *rootsDir;
+//    static dispatch_once_t token;
+//    dispatch_once(&token, ^{
+//        rootsDir = [ContainerURL() URLByAppendingPathComponent:@"roots"];
+//        NSFileManager *manager = [NSFileManager defaultManager];
+//        [manager createDirectoryAtURL:rootsDir
+//          withIntermediateDirectories:YES
+//                           attributes:@{}
+//                                error:nil];
+//    });
+//    return rootsDir;
+//}
 
 static NSURL *RootsDir() {
     static NSURL *rootsDir;
     static dispatch_once_t token;
     dispatch_once(&token, ^{
-        rootsDir = [ContainerURL() URLByAppendingPathComponent:@"roots"];
+        rootsDir = [[NSFileManager.defaultManager containerURLForSecurityApplicationGroupIdentifier:@"group.app.ish.iSH"] URLByAppendingPathComponent:@"roots"];
         NSFileManager *manager = [NSFileManager defaultManager];
         [manager createDirectoryAtURL:rootsDir
           withIntermediateDirectories:YES
@@ -53,12 +67,12 @@ static NSString *kDefaultRoot = @"Default Root";
             }
             _wantsVersionFile = YES;
         }
-        [self observe:@[@"roots"] options:0 owner:self usingBlock:^(typeof(self) self) {
-            if (self.defaultRoot == nil && self.roots.count)
-                self.defaultRoot = self.roots[0];
-            [self syncFileProviderDomains];
-        }];
-        [self syncFileProviderDomains];
+//        [self observe:@[@"roots"] options:0 owner:self usingBlock:^(typeof(self) self) {
+//            if (self.defaultRoot == nil && self.roots.count)
+//                self.defaultRoot = self.roots[0];
+//            [self syncFileProviderDomains];
+//        }];
+//        [self syncFileProviderDomains];
 
         if ((!self.defaultRoot || ![self.roots containsObject:self.defaultRoot]) && self.roots.count)
             self.defaultRoot = self.roots.firstObject;
@@ -77,43 +91,43 @@ static NSString *kDefaultRoot = @"Default Root";
     return [RootsDir() URLByAppendingPathComponent:name];
 }
 
-- (void)syncFileProviderDomains {
-    if (self.updatingDomains) {
-        self.domainsNeedUpdate = YES;
-        return;
-    }
-    self.updatingDomains = YES;
-    self.domainsNeedUpdate = NO;
-
-    [NSFileProviderManager getDomainsWithCompletionHandler:^(NSArray<NSFileProviderDomain *> *domains, NSError *error) {
-        void (^onError)(NSError *error) = ^(NSError *error) {
-            if (error != nil)
-                NSLog(@"error adjusting domains: %@", error);
-        };
-        onError(error);
-        NSMutableOrderedSet<NSString *> *missingRoots = [self.roots mutableCopy];
-        for (NSFileProviderDomain *domain in domains) {
-            if ([missingRoots containsObject:domain.identifier]) {
-                [missingRoots removeObject:domain.identifier];
-            } else {
-                [NSFileManager.defaultManager removeItemAtURL:
-                 [NSFileProviderManager.defaultManager.documentStorageURL
-                  URLByAppendingPathComponent:domain.pathRelativeToDocumentStorage]
-                                                        error:nil];
-                [NSFileProviderManager removeDomain:domain completionHandler:onError];
-            }
-        }
-        for (NSString *rootId in missingRoots) {
-            [NSFileProviderManager addDomain:[[NSFileProviderDomain alloc] initWithIdentifier:rootId
-                                                                                  displayName:rootId
-                                                                pathRelativeToDocumentStorage:rootId]
-                           completionHandler:onError];
-        }
-        if (self.domainsNeedUpdate)
-            [self syncFileProviderDomains];
-        self.updatingDomains = NO;
-    }];
-}
+//- (void)syncFileProviderDomains {
+//    if (self.updatingDomains) {
+//        self.domainsNeedUpdate = YES;
+//        return;
+//    }
+//    self.updatingDomains = YES;
+//    self.domainsNeedUpdate = NO;
+//
+//    [NSFileProviderManager getDomainsWithCompletionHandler:^(NSArray<NSFileProviderDomain *> *domains, NSError *error) {
+//        void (^onError)(NSError *error) = ^(NSError *error) {
+//            if (error != nil)
+//                NSLog(@"error adjusting domains: %@", error);
+//        };
+//        onError(error);
+//        NSMutableOrderedSet<NSString *> *missingRoots = [self.roots mutableCopy];
+//        for (NSFileProviderDomain *domain in domains) {
+//            if ([missingRoots containsObject:domain.identifier]) {
+//                [missingRoots removeObject:domain.identifier];
+//            } else {
+//                [NSFileManager.defaultManager removeItemAtURL:
+//                 [NSFileProviderManager.defaultManager.documentStorageURL
+//                  URLByAppendingPathComponent:domain.pathRelativeToDocumentStorage]
+//                                                        error:nil];
+//                [NSFileProviderManager removeDomain:domain completionHandler:onError];
+//            }
+//        }
+//        for (NSString *rootId in missingRoots) {
+//            [NSFileProviderManager addDomain:[[NSFileProviderDomain alloc] initWithIdentifier:rootId
+//                                                                                  displayName:rootId
+//                                                                pathRelativeToDocumentStorage:rootId]
+//                           completionHandler:onError];
+//        }
+//        if (self.domainsNeedUpdate)
+//            [self syncFileProviderDomains];
+//        self.updatingDomains = NO;
+//    }];
+//}
 
 - (BOOL)accessInstanceVariablesDirectly {
     return YES;
@@ -164,23 +178,23 @@ void root_progress_callback(void *cookie, double progress, const char *message, 
 }
 
 - (BOOL)exportRootNamed:(NSString *)name toArchive:(NSURL *)archive error:(NSError **)error progressReporter:(id<ProgressReporter> _Nullable)progress {
-    NSAssert([self.roots containsObject:name], @"trying to export a root that doesn't exist: %@", name);
-    struct fakefsify_error fs_err;
-    if (!fakefs_export([self rootUrl:name].fileSystemRepresentation,
-                       archive.fileSystemRepresentation,
-                       &fs_err, (struct progress) {(__bridge void *) progress, root_progress_callback})) {
-        // TODO: dedup with above method
-        NSString *domain = NSPOSIXErrorDomain;
-        if (fs_err.type == ERR_SQLITE)
-            domain = @"SQLite";
-        *error = [NSError errorWithDomain:domain
-                                     code:fs_err.code
-                                 userInfo:@{NSLocalizedDescriptionKey: [NSString stringWithUTF8String:fs_err.message]}];
-        if (fs_err.type == ERR_CANCELLED)
-            *error = nil;
-        free(fs_err.message);
-        return NO;
-    }
+//    NSAssert([self.roots containsObject:name], @"trying to export a root that doesn't exist: %@", name);
+//    struct fakefsify_error fs_err;
+//    if (!fakefs_export([self rootUrl:name].fileSystemRepresentation,
+//                       archive.fileSystemRepresentation,
+//                       &fs_err, (struct progress) {(__bridge void *) progress, root_progress_callback})) {
+//        // TODO: dedup with above method
+//        NSString *domain = NSPOSIXErrorDomain;
+//        if (fs_err.type == ERR_SQLITE)
+//            domain = @"SQLite";
+//        *error = [NSError errorWithDomain:domain
+//                                     code:fs_err.code
+//                                 userInfo:@{NSLocalizedDescriptionKey: [NSString stringWithUTF8String:fs_err.message]}];
+//        if (fs_err.type == ERR_CANCELLED)
+//            *error = nil;
+//        free(fs_err.message);
+//        return NO;
+//    }
     return YES;
 }
 
