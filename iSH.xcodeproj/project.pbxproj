@@ -187,9 +187,7 @@
 		650B337222EA235C00B4C03E /* PasteboardDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteboardDevice.h; sourceTree = "<group>"; };
 		650B337322EA235C00B4C03E /* PasteboardDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteboardDevice.m; sourceTree = "<group>"; };
 		BB0B848E2586A4CF00208600 /* XcodeDefault.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = XcodeDefault.xcconfig; sourceTree = "<group>"; };
-		BB0B859B2586F13200208600 /* XcodeDebug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = XcodeDebug.xcconfig; sourceTree = "<group>"; };
 		BB0B859C2586F19000208600 /* XcodeRelease.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = XcodeRelease.xcconfig; sourceTree = "<group>"; };
-		BB0B85A42586F1CB00208600 /* ProjectDebug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ProjectDebug.xcconfig; sourceTree = "<group>"; };
 		BB0B85A52586F1E100208600 /* ProjectRelease.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ProjectRelease.xcconfig; sourceTree = "<group>"; };
 		BB0B85AD2586F3EB00208600 /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
 		BB0B86CD2586FD8800208600 /* App.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = App.xcconfig; sourceTree = "<group>"; };
@@ -318,9 +316,7 @@
 				BBFB2CDA259028DC00545EAB /* StaticLib.xcconfig */,
 				BBECF3BA2691379100DEC937 /* StaticLibLinux.xcconfig */,
 				BB0B848E2586A4CF00208600 /* XcodeDefault.xcconfig */,
-				BB0B859B2586F13200208600 /* XcodeDebug.xcconfig */,
 				BB0B859C2586F19000208600 /* XcodeRelease.xcconfig */,
-				BB0B85A42586F1CB00208600 /* ProjectDebug.xcconfig */,
 				BB0B85A52586F1E100208600 /* ProjectRelease.xcconfig */,
 			);
 			name = Configs;
@@ -670,7 +666,6 @@
 /* Begin XCBuildConfiguration section */
 		BB792B4A1F96D8E000FFB7A4 /* Debug-ApplePleaseFixFB19282108 */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB0B85A42586F1CB00208600 /* ProjectDebug.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 415;
 			};
