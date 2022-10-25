@@ -245,6 +245,12 @@
 			baseConfigurationReference = BB0B85A52586F1E100208600 /* ProjectRelease.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 415;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+					"$(SRCROOT)/mycode",
+					"$(SRCROOT)/mycode/libarchive",
+				);
 			};
 			name = Release;
 		};
