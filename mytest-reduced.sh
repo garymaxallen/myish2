@@ -4,7 +4,8 @@ rm -rf build
 mkdir -p build/Release-iphonesimulator
 cp myresource/lib* build/Release-iphonesimulator/
 #cp myresource/infoplisticons.h build/Release-iphonesimulator/
-xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -arch x86_64 -sdk iphonesimulator15.5 -target iSH
+#xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -arch x86_64 -sdk iphonesimulator15.5 -target iSH
+xcodebuild build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO -arch x86_64 -sdk iphonesimulator16.0 -target iSH
 cp myresource/repositories.txt build/Release-iphonesimulator/iSH.app/
 cp myresource/hterm_all.js build/Release-iphonesimulator/iSH.app/
 cp myresource/root.tar.gz build/Release-iphonesimulator/iSH.app/
