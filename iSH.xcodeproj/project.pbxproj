@@ -21,7 +21,6 @@
 		632B84F129068296006E182F /* DelayedUITask.m in Sources */ = {isa = PBXBuildFile; fileRef = BB455E101FB37F6600AFB48B /* DelayedUITask.m */; };
 		632B84F229068296006E182F /* PasteboardDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 650B337322EA235C00B4C03E /* PasteboardDevice.m */; };
 		632B84F329068296006E182F /* LocationDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = BB235533235D488400139E00 /* LocationDevice.m */; };
-		632B84F429068296006E182F /* iOSFS.m in Sources */ = {isa = PBXBuildFile; fileRef = 408A2639236440F8008A4E81 /* iOSFS.m */; };
 		632B84F529068296006E182F /* Roots.m in Sources */ = {isa = PBXBuildFile; fileRef = BB10E5CD248DBE66009C7A74 /* Roots.m */; };
 		632B84F629068296006E182F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB792B621F96D90D00FFB7A4 /* main.m */; };
 		632B84F7290682A7006E182F /* fakefs.c in Sources */ = {isa = PBXBuildFile; fileRef = BB10E5C2248DBA7B009C7A74 /* fakefs.c */; };
@@ -33,8 +32,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		408A2639236440F8008A4E81 /* iOSFS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSFS.m; sourceTree = "<group>"; };
-		408A263B23644102008A4E81 /* iOSFS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSFS.h; sourceTree = "<group>"; };
 		63021C9F2902D6020001E3E0 /* libarchive.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libarchive.a; path = myresource/libarchive.a; sourceTree = "<group>"; };
 		63021CA12902D6790001E3E0 /* libish_emu.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libish_emu.a; path = myresource/libish_emu.a; sourceTree = "<group>"; };
 		63021CA22902D6790001E3E0 /* libish.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libish.a; path = myresource/libish.a; sourceTree = "<group>"; };
@@ -135,8 +132,6 @@
 				650B337322EA235C00B4C03E /* PasteboardDevice.m */,
 				BB235535235D489400139E00 /* LocationDevice.h */,
 				BB235533235D488400139E00 /* LocationDevice.m */,
-				408A263B23644102008A4E81 /* iOSFS.h */,
-				408A2639236440F8008A4E81 /* iOSFS.m */,
 				BB10E5CC248DBE66009C7A74 /* Roots.h */,
 				BB10E5CD248DBE66009C7A74 /* Roots.m */,
 				BB10E5C2248DBA7B009C7A74 /* fakefs.c */,
@@ -237,7 +232,6 @@
 				632B84F129068296006E182F /* DelayedUITask.m in Sources */,
 				632B84F229068296006E182F /* PasteboardDevice.m in Sources */,
 				632B84F329068296006E182F /* LocationDevice.m in Sources */,
-				632B84F429068296006E182F /* iOSFS.m in Sources */,
 				632B84F529068296006E182F /* Roots.m in Sources */,
 				632B84F629068296006E182F /* main.m in Sources */,
 			);

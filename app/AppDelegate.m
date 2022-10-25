@@ -13,7 +13,7 @@
 #import "AppDelegate.h"
 //#import "AppGroup.h"
 #import "CurrentRoot.h"
-#import "iOSFS.h"
+//#import "iOSFS.h"
 #import "SceneDelegate.h"
 #import "PasteboardDevice.h"
 #import "LocationDevice.h"
@@ -83,8 +83,8 @@ static NSString *const kSkipStartupMessage = @"Skip Startup Message";
     if (err < 0)
         return err;
 
-    fs_register(&iosfs);
-    fs_register(&iosfs_unsafe);
+//    fs_register(&iosfs);
+//    fs_register(&iosfs_unsafe);
 
     // need to do this first so that we can have a valid current for the generic_mknod calls
     err = become_first_process();
@@ -133,7 +133,7 @@ static NSString *const kSkipStartupMessage = @"Skip Startup Message";
     do_mount(&procfs, "proc", "/proc", "", 0);
     do_mount(&devptsfs, "devpts", "/dev/pts", "", 0);
 
-    iosfs_init(); // let it mount any filesystems from user defaults
+//    iosfs_init(); // let it mount any filesystems from user defaults
 
     [self configureDns];
     
