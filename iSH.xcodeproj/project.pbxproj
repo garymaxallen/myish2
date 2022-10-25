@@ -35,10 +35,10 @@
 /* Begin PBXFileReference section */
 		408A2639236440F8008A4E81 /* iOSFS.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOSFS.m; sourceTree = "<group>"; };
 		408A263B23644102008A4E81 /* iOSFS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iOSFS.h; sourceTree = "<group>"; };
-		63021C9F2902D6020001E3E0 /* libarchive.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libarchive.a; path = ish_resources/libarchive.a; sourceTree = "<group>"; };
-		63021CA12902D6790001E3E0 /* libish_emu.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libish_emu.a; path = ish_resources/libish_emu.a; sourceTree = "<group>"; };
-		63021CA22902D6790001E3E0 /* libish.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libish.a; path = ish_resources/libish.a; sourceTree = "<group>"; };
-		63021CA32902D6790001E3E0 /* libfakefs.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfakefs.a; path = ish_resources/libfakefs.a; sourceTree = "<group>"; };
+		63021C9F2902D6020001E3E0 /* libarchive.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libarchive.a; path = myresource/libarchive.a; sourceTree = "<group>"; };
+		63021CA12902D6790001E3E0 /* libish_emu.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libish_emu.a; path = myresource/libish_emu.a; sourceTree = "<group>"; };
+		63021CA22902D6790001E3E0 /* libish.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libish.a; path = myresource/libish.a; sourceTree = "<group>"; };
+		63021CA32902D6790001E3E0 /* libfakefs.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfakefs.a; path = myresource/libfakefs.a; sourceTree = "<group>"; };
 		650B337222EA235C00B4C03E /* PasteboardDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteboardDevice.h; sourceTree = "<group>"; };
 		650B337322EA235C00B4C03E /* PasteboardDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteboardDevice.m; sourceTree = "<group>"; };
 		BB0B85A52586F1E100208600 /* ProjectRelease.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ProjectRelease.xcconfig; sourceTree = "<group>"; };
@@ -259,7 +259,7 @@
 			buildSettings = {
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/ish_resources",
+					"$(PROJECT_DIR)/myresource",
 				);
 			};
 			name = Release;
