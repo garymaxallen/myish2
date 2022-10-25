@@ -7,9 +7,9 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
-#include "kernel/fs.h"
-#include "fs/dev.h"
-#include "util/sync.h"
+#include "mycode/kernel/fs.h"
+#include "mycode/fs/dev.h"
+#include "mycode/util/sync.h"
 
 @interface LocationTracker : NSObject <CLLocationManagerDelegate>
 
