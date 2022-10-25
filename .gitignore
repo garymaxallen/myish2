@@ -1,6 +1,5 @@
 .DS_Store
 build
-mesonbuild
-project.xcworkspace/
-deps/libarchive.xcodeproj/xcuserdata/
 iSH.xcodeproj/xcuserdata/
+iSH.xcodeproj/xcshareddata/
+iSH.xcodeproj/project.xcworkspace/
