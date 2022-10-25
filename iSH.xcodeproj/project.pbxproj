@@ -11,10 +11,11 @@
 		63021CA42902D6790001E3E0 /* libish_emu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63021CA12902D6790001E3E0 /* libish_emu.a */; };
 		63021CA52902D6790001E3E0 /* libish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63021CA22902D6790001E3E0 /* libish.a */; };
 		63021CA62902D6790001E3E0 /* libfakefs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63021CA32902D6790001E3E0 /* libfakefs.a */; };
-		632B84EA29068296006E182F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB792B541F96D90D00FFB7A4 /* AppDelegate.m */; };
+		630EFB17290830870002A1F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EFB16290830870002A1F5 /* AppDelegate.swift */; };
+		630EFB19290830CF0002A1F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EFB18290830CF0002A1F5 /* SceneDelegate.swift */; };
+		630EFB1B290831050002A1F5 /* MyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EFB1A290831050002A1F5 /* MyVC.swift */; };
+		630EFB1E290831C90002A1F5 /* MyUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 630EFB1D290831C90002A1F5 /* MyUtility.m */; };
 		632B84EB29068296006E182F /* CurrentRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = BB565EA32734F1FB00C93EAE /* CurrentRoot.m */; };
-		632B84EC29068296006E182F /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCC9D952365430800424C83 /* SceneDelegate.m */; };
-		632B84ED29068296006E182F /* TerminalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB792B571F96D90D00FFB7A4 /* TerminalViewController.m */; };
 		632B84EE29068296006E182F /* TerminalView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB78AB2A1FAD22440013E782 /* TerminalView.m */; };
 		632B84EF29068296006E182F /* Terminal.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0FC5911F980A6B00803272 /* Terminal.m */; };
 		632B84F029068296006E182F /* ScrollbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB23F58C231E1D1400585522 /* ScrollbarView.m */; };
@@ -22,7 +23,6 @@
 		632B84F229068296006E182F /* PasteboardDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 650B337322EA235C00B4C03E /* PasteboardDevice.m */; };
 		632B84F329068296006E182F /* LocationDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = BB235533235D488400139E00 /* LocationDevice.m */; };
 		632B84F529068296006E182F /* Roots.m in Sources */ = {isa = PBXBuildFile; fileRef = BB10E5CD248DBE66009C7A74 /* Roots.m */; };
-		632B84F629068296006E182F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB792B621F96D90D00FFB7A4 /* main.m */; };
 		632B84F7290682A7006E182F /* fakefs.c in Sources */ = {isa = PBXBuildFile; fileRef = BB10E5C2248DBA7B009C7A74 /* fakefs.c */; };
 		BB235537235D49B300139E00 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB235536235D49B300139E00 /* CoreLocation.framework */; };
 		BB6DB261216435340047A611 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BB6DB260216435330047A611 /* libiconv.tbd */; };
@@ -37,6 +37,12 @@
 		63021CA22902D6790001E3E0 /* libish.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libish.a; path = myresource/libish.a; sourceTree = "<group>"; };
 		63021CA32902D6790001E3E0 /* libfakefs.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfakefs.a; path = myresource/libfakefs.a; sourceTree = "<group>"; };
 		630EFB1129082CAE0002A1F5 /* mysh.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = mysh.xcconfig; sourceTree = "<group>"; };
+		630EFB15290830870002A1F5 /* iSH-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iSH-Bridging-Header.h"; sourceTree = "<group>"; };
+		630EFB16290830870002A1F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		630EFB18290830CF0002A1F5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		630EFB1A290831050002A1F5 /* MyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVC.swift; sourceTree = "<group>"; };
+		630EFB1C290831C90002A1F5 /* MyUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyUtility.h; sourceTree = "<group>"; };
+		630EFB1D290831C90002A1F5 /* MyUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyUtility.m; sourceTree = "<group>"; };
 		650B337222EA235C00B4C03E /* PasteboardDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteboardDevice.h; sourceTree = "<group>"; };
 		650B337322EA235C00B4C03E /* PasteboardDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteboardDevice.m; sourceTree = "<group>"; };
 		BB0FC5901F980A6B00803272 /* Terminal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Terminal.h; sourceTree = "<group>"; };
@@ -58,16 +64,9 @@
 		BB78AB291FAD22440013E782 /* TerminalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TerminalView.h; sourceTree = "<group>"; };
 		BB78AB2A1FAD22440013E782 /* TerminalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TerminalView.m; sourceTree = "<group>"; };
 		BB792B501F96D90D00FFB7A4 /* iSH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSH.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB792B531F96D90D00FFB7A4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		BB792B541F96D90D00FFB7A4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BB792B561F96D90D00FFB7A4 /* TerminalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TerminalViewController.h; sourceTree = "<group>"; };
-		BB792B571F96D90D00FFB7A4 /* TerminalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TerminalViewController.m; sourceTree = "<group>"; };
 		BB792B611F96D90D00FFB7A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BB792B621F96D90D00FFB7A4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BBA8E2C0236FF5EA00515F76 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		BBAEE338249B58E80069EBB5 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
-		BBCC9D942365430800424C83 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		BBCC9D952365430800424C83 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		BBFB55652158644C00DFE6DE /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -112,14 +111,14 @@
 		BB792B521F96D90D00FFB7A4 /* app */ = {
 			isa = PBXGroup;
 			children = (
-				BB792B531F96D90D00FFB7A4 /* AppDelegate.h */,
-				BB792B541F96D90D00FFB7A4 /* AppDelegate.m */,
+				630EFB16290830870002A1F5 /* AppDelegate.swift */,
+				630EFB18290830CF0002A1F5 /* SceneDelegate.swift */,
+				630EFB1A290831050002A1F5 /* MyVC.swift */,
+				630EFB1C290831C90002A1F5 /* MyUtility.h */,
+				630EFB1D290831C90002A1F5 /* MyUtility.m */,
+				630EFB15290830870002A1F5 /* iSH-Bridging-Header.h */,
 				BB565EA52734F22D00C93EAE /* CurrentRoot.h */,
 				BB565EA32734F1FB00C93EAE /* CurrentRoot.m */,
-				BBCC9D942365430800424C83 /* SceneDelegate.h */,
-				BBCC9D952365430800424C83 /* SceneDelegate.m */,
-				BB792B561F96D90D00FFB7A4 /* TerminalViewController.h */,
-				BB792B571F96D90D00FFB7A4 /* TerminalViewController.m */,
 				BB78AB291FAD22440013E782 /* TerminalView.h */,
 				BB78AB2A1FAD22440013E782 /* TerminalView.m */,
 				BB0FC5901F980A6B00803272 /* Terminal.h */,
@@ -136,7 +135,6 @@
 				BB10E5CD248DBE66009C7A74 /* Roots.m */,
 				BB10E5C2248DBA7B009C7A74 /* fakefs.c */,
 				BB792B611F96D90D00FFB7A4 /* Info.plist */,
-				BB792B621F96D90D00FFB7A4 /* main.m */,
 				630EFB1129082CAE0002A1F5 /* mysh.xcconfig */,
 			);
 			path = app;
@@ -189,6 +187,7 @@
 				TargetAttributes = {
 					BB792B4F1F96D90D00FFB7A4 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 1400;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -222,18 +221,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				632B84F7290682A7006E182F /* fakefs.c in Sources */,
-				632B84EA29068296006E182F /* AppDelegate.m in Sources */,
 				632B84EB29068296006E182F /* CurrentRoot.m in Sources */,
-				632B84EC29068296006E182F /* SceneDelegate.m in Sources */,
-				632B84ED29068296006E182F /* TerminalViewController.m in Sources */,
+				630EFB1B290831050002A1F5 /* MyVC.swift in Sources */,
+				630EFB17290830870002A1F5 /* AppDelegate.swift in Sources */,
+				630EFB19290830CF0002A1F5 /* SceneDelegate.swift in Sources */,
 				632B84EE29068296006E182F /* TerminalView.m in Sources */,
 				632B84EF29068296006E182F /* Terminal.m in Sources */,
 				632B84F029068296006E182F /* ScrollbarView.m in Sources */,
 				632B84F129068296006E182F /* DelayedUITask.m in Sources */,
 				632B84F229068296006E182F /* PasteboardDevice.m in Sources */,
 				632B84F329068296006E182F /* LocationDevice.m in Sources */,
+				630EFB1E290831C90002A1F5 /* MyUtility.m in Sources */,
 				632B84F529068296006E182F /* Roots.m in Sources */,
-				632B84F629068296006E182F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,10 +250,14 @@
 		BB792B651F96D90D00FFB7A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/myresource",
 				);
+				SWIFT_OBJC_BRIDGING_HEADER = "app/iSH-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
