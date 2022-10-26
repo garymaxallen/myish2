@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: winScene)
         window?.rootViewController = MyVC()
 //        window?.backgroundColor = UIColor.systemBackground
-        window?.backgroundColor = UIColor.systemBlue
+//        window?.backgroundColor = UIColor.systemBlue
         window?.makeKeyAndVisible()
 //        NSLog("com.gg.mysh.log: %@", "scene")
     }

@@ -6,6 +6,7 @@
 
 #import "TerminalView.h"
 #import "Terminal.h"
+#import "Roots.h"
 
 
 #include "kernel/init.h"
@@ -17,3 +18,5 @@
 #import "LocationDevice.h"
 #include "fs/dyndev.h"
 #include "fs/path.h"
+
+//#include "kernel/fs.h"

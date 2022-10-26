@@ -19,7 +19,8 @@ class MyVC: UIViewController {
         // Do any additional setup after loading the view.
 //        self.view.backgroundColor = UIColor.systemBlue
         setKeyboard()
-        MyUtility.boot()
+//        MyUtility.boot()
+        _ = boot()
         _ = startSession()
     }
     
@@ -176,13 +177,69 @@ class MyVC: UIViewController {
     }
     
     func boot() -> Int {
-        let rootsDir = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.app.ish.iSH")?.appendingPathComponent("roots")
-        let root = rootsDir?.appendingPathComponent(UserDefaults.standard.string(forKey: "Default Root")!)
-        NSLog("root: %@", root?.description ?? "nil")
-//        var err = mount_root(&fakefs, (root!.appendingPathComponent("data") as NSURL).fileSystemRepresentation)
-//        if (err < 0){
-//            return err
-//        }
-        return 0
+        var root = Roots.instance().rootUrl(Roots.instance().defaultRoot)
+        NSLog("com.mycom.mytest2.log: root: %@", root.description)
+
+        let fakefs = UnsafeMutablePointer<fs_ops>.allocate(capacity: 1)
+//        var err = mount_root(fakefs, (root.appendingPathComponent("data") as NSURL).fileSystemRepresentation)
+        var err = mount_root(fakefs, MyUtility.get_root())
+        if (err < 0){
+            return Int(err)
+        }
+
+        err = become_first_process()
+        if (err < 0){
+            return Int(err)
+        }
+
+        generic_mknodat(MyUtility.get_at_pwd(), "/dev/tty1", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 1))
+        generic_mknodat(MyUtility.get_at_pwd(), "/dev/tty2", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 2))
+        generic_mknodat(MyUtility.get_at_pwd(), "/dev/tty3", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 3))
+        generic_mknodat(MyUtility.get_at_pwd(), "/dev/tty4", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 4))
+        generic_mknodat(MyUtility.get_at_pwd(), "/dev/tty5", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 5))
+        generic_mknodat(MyUtility.get_at_pwd(), "/dev/tty6", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 6))
+        generic_mknodat(MyUtility.get_at_pwd(), "/dev/tty7", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 7))
+        generic_mknodat(MyUtility.get_at_pwd(), "/dev/tty", S_IFCHR|0666, dev_make(TTY_ALTERNATE_MAJOR, DEV_TTY_MINOR))
+        generic_mknodat(MyUtility.get_at_pwd(), "/dev/console", S_IFCHR|0666, dev_make(TTY_ALTERNATE_MAJOR, DEV_CONSOLE_MINOR))
+        generic_mknodat(MyUtility.get_at_pwd(), "/dev/ptmx", S_IFCHR|0666, dev_make(TTY_ALTERNATE_MAJOR, DEV_PTMX_MINOR))
+        generic_mknodat(MyUtility.get_at_pwd(), "/dev/null", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_NULL_MINOR))
+        generic_mknodat(MyUtility.get_at_pwd(), "/dev/zero", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_ZERO_MINOR))
+        generic_mknodat(MyUtility.get_at_pwd(), "/dev/full", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_FULL_MINOR))
+        generic_mknodat(MyUtility.get_at_pwd(), "/dev/random", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_RANDOM_MINOR))
+        generic_mknodat(MyUtility.get_at_pwd(), "/dev/urandom", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_URANDOM_MINOR))
+        generic_mkdirat(MyUtility.get_at_pwd(), "/dev/pts", 0755)
+        // Permissions on / have been broken for a while, let's fix them
+        generic_setattrat(MyUtility.get_at_pwd(), "/", attr(type: attr_mode, attr.__Unnamed_union___Anonymous_field1(mode: 0755)), false)
+        
+        err = dyn_dev_register(&location_dev, DEV_CHAR, DYN_DEV_MAJOR, DEV_LOCATION_MINOR);
+        if (err != 0){
+            return Int(err)
+        }
+        generic_mknodat(MyUtility.get_at_pwd(), "/dev/location", S_IFCHR|0666, dev_make(DYN_DEV_MAJOR, DEV_LOCATION_MINOR))
+        
+        let procfs = UnsafeMutablePointer<fs_ops>.allocate(capacity: 1)
+        do_mount(procfs, "proc", "/proc", "", 0)
+        let devptsfs = UnsafeMutablePointer<fs_ops>.allocate(capacity: 1)
+        do_mount(devptsfs, "devpts", "/dev/pts", "", 0)
+        
+        MyUtility.configureDns()
+        
+        let ios_console_driver = UnsafeMutablePointer<tty_driver>.allocate(capacity: 1)
+//        tty_drivers[TTY_CONSOLE_MAJOR] = ios_console_driver
+        tty_drivers.4 = ios_console_driver
+        set_console_device(TTY_CONSOLE_MAJOR, 1)
+        err = create_stdio("/dev/console", TTY_CONSOLE_MAJOR, 1)
+        if (err < 0){
+            return Int(err)
+        }
+        
+        err = do_execve("/bin/login", 3, "/bin/login\0-f\0root\0", "TERM=xterm-256color\0")
+        if (err < 0){
+            return Int(err)
+        }
+        task_start(current)
+
+        return 0;
     }
+    
 }

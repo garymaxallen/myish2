@@ -25,14 +25,23 @@
 
 @implementation MyUtility
 
++ (struct fd *)get_at_pwd {
+    return AT_PWD;
+}
+
++ (const char *)get_root {
+    return [[Roots.instance rootUrl:Roots.instance.defaultRoot]  URLByAppendingPathComponent:@"data"].fileSystemRepresentation;
+}
+
 + (int)boot {
 //    NSURL *rootsDir = [[NSFileManager.defaultManager containerURLForSecurityApplicationGroupIdentifier:@"group.app.ish.iSH"] URLByAppendingPathComponent:@"roots"];
 //    NSURL *root = [rootsDir URLByAppendingPathComponent:[NSUserDefaults.standardUserDefaults stringForKey:@"Default Root"]];
 
-    NSURL *root = [Roots.instance rootUrl:Roots.instance.defaultRoot];
-    NSLog(@"root: %@", root);
+//    NSURL *root = [Roots.instance rootUrl:Roots.instance.defaultRoot];
+//    NSLog(@"root: %@", root);
 
-    int err = mount_root(&fakefs, [root URLByAppendingPathComponent:@"data"].fileSystemRepresentation);
+//    int err = mount_root(&fakefs, [root URLByAppendingPathComponent:@"data"].fileSystemRepresentation);
+    int err = mount_root(&fakefs, [self get_root]);
     if (err < 0)
         return err;
 
@@ -43,7 +52,8 @@
 
     // create some device nodes
     // this will do nothing if they already exist
-    generic_mknodat(AT_PWD, "/dev/tty1", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 1));
+//    NSLog(@"com.mycom.mytest2.log: root: %@", AT_PWD);
+    generic_mknodat([self get_at_pwd], "/dev/tty1", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 1));
     generic_mknodat(AT_PWD, "/dev/tty2", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 2));
     generic_mknodat(AT_PWD, "/dev/tty3", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 3));
     generic_mknodat(AT_PWD, "/dev/tty4", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 4));
