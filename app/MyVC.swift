@@ -227,9 +227,10 @@ class MyVC: UIViewController {
         
         MyUtility.configureDns()
         
-        let ios_console_driver = UnsafeMutablePointer<tty_driver>.allocate(capacity: 1)
-//        tty_drivers[TTY_CONSOLE_MAJOR] = ios_console_driver
-        tty_drivers.4 = ios_console_driver
+        let ptr = UnsafeMutablePointer<tty_driver>.allocate(capacity: 1)
+        ptr.initialize(to: ios_console_driver)
+        tty_drivers.4 = ptr
+        
         set_console_device(TTY_CONSOLE_MAJOR, 1)
         err = create_stdio("/dev/console", TTY_CONSOLE_MAJOR, 1)
         if (err < 0){

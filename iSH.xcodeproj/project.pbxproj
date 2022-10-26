@@ -24,6 +24,7 @@
 		632B84F329068296006E182F /* LocationDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = BB235533235D488400139E00 /* LocationDevice.m */; };
 		632B84F529068296006E182F /* Roots.m in Sources */ = {isa = PBXBuildFile; fileRef = BB10E5CD248DBE66009C7A74 /* Roots.m */; };
 		632B84F7290682A7006E182F /* fakefs.c in Sources */ = {isa = PBXBuildFile; fileRef = BB10E5C2248DBA7B009C7A74 /* fakefs.c */; };
+		63DEDCE429097D0C00E55F3B /* MySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DEDCE329097D0C00E55F3B /* MySwift.swift */; };
 		BB235537235D49B300139E00 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB235536235D49B300139E00 /* CoreLocation.framework */; };
 		BB6DB261216435340047A611 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BB6DB260216435330047A611 /* libiconv.tbd */; };
 		BBA8E2C1236FF5EA00515F76 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA8E2C0236FF5EA00515F76 /* SystemConfiguration.framework */; };
@@ -43,6 +44,7 @@
 		630EFB1A290831050002A1F5 /* MyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyVC.swift; sourceTree = "<group>"; };
 		630EFB1C290831C90002A1F5 /* MyUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyUtility.h; sourceTree = "<group>"; };
 		630EFB1D290831C90002A1F5 /* MyUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyUtility.m; sourceTree = "<group>"; };
+		63DEDCE329097D0C00E55F3B /* MySwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySwift.swift; sourceTree = "<group>"; };
 		650B337222EA235C00B4C03E /* PasteboardDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteboardDevice.h; sourceTree = "<group>"; };
 		650B337322EA235C00B4C03E /* PasteboardDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteboardDevice.m; sourceTree = "<group>"; };
 		BB0FC5901F980A6B00803272 /* Terminal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Terminal.h; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				630EFB16290830870002A1F5 /* AppDelegate.swift */,
 				630EFB18290830CF0002A1F5 /* SceneDelegate.swift */,
 				630EFB1A290831050002A1F5 /* MyVC.swift */,
+				63DEDCE329097D0C00E55F3B /* MySwift.swift */,
 				630EFB1C290831C90002A1F5 /* MyUtility.h */,
 				630EFB1D290831C90002A1F5 /* MyUtility.m */,
 				630EFB15290830870002A1F5 /* iSH-Bridging-Header.h */,
@@ -225,6 +228,7 @@
 				630EFB1B290831050002A1F5 /* MyVC.swift in Sources */,
 				630EFB17290830870002A1F5 /* AppDelegate.swift in Sources */,
 				630EFB19290830CF0002A1F5 /* SceneDelegate.swift in Sources */,
+				63DEDCE429097D0C00E55F3B /* MySwift.swift in Sources */,
 				632B84EE29068296006E182F /* TerminalView.m in Sources */,
 				632B84EF29068296006E182F /* Terminal.m in Sources */,
 				632B84F029068296006E182F /* ScrollbarView.m in Sources */,

@@ -19,6 +19,8 @@
 
 #import "Roots.h"
 
+#import "iSH-Swift.h"
+
 @interface MyUtility()
 
 @end
@@ -33,7 +35,8 @@
     return [[Roots.instance rootUrl:Roots.instance.defaultRoot]  URLByAppendingPathComponent:@"data"].fileSystemRepresentation;
 }
 
-+ (int)boot {
++ (void)boot {
+//    [MySwift printSome];
 //    NSURL *rootsDir = [[NSFileManager.defaultManager containerURLForSecurityApplicationGroupIdentifier:@"group.app.ish.iSH"] URLByAppendingPathComponent:@"roots"];
 //    NSURL *root = [rootsDir URLByAppendingPathComponent:[NSUserDefaults.standardUserDefaults stringForKey:@"Default Root"]];
 
@@ -42,15 +45,18 @@
 
 //    int err = mount_root(&fakefs, [root URLByAppendingPathComponent:@"data"].fileSystemRepresentation);
 //    int err = mount_root(&fakefs, [self get_root]);
-    NSLog(@"com.gg.mysh.log: root: %s", [self get_root]);
-    int err = mount_root(&fakefs, [self get_root]);
-    if (err < 0)
-        return err;
+    
+    
+//    NSLog(@"com.gg.mysh.log: root: %s", [self get_root]);
+//    mount_root(&fakefs, [[Roots.instance rootUrl:Roots.instance.defaultRoot]  URLByAppendingPathComponent:@"data"].fileSystemRepresentation);
+    mount_root(&fakefs, [MySwift get_root]);
+//    [MySwift printSome];
 
     // need to do this first so that we can have a valid current for the generic_mknod calls
-    err = become_first_process();
-    if (err < 0)
-        return err;
+    become_first_process();
+    
+    
+//    [MySwift printSome];
 
     // create some device nodes
     // this will do nothing if they already exist
@@ -79,33 +85,23 @@
     // Permissions on / have been broken for a while, let's fix them
     generic_setattrat(AT_PWD, "/", (struct attr) {.type = attr_mode, .mode = 0755}, false);
     
-    err = dyn_dev_register(&location_dev, DEV_CHAR, DYN_DEV_MAJOR, DEV_LOCATION_MINOR);
-    if (err != 0)
-        return err;
+    dyn_dev_register(&location_dev, DEV_CHAR, DYN_DEV_MAJOR, DEV_LOCATION_MINOR);
+    
     generic_mknodat(AT_PWD, "/dev/location", S_IFCHR|0666, dev_make(DYN_DEV_MAJOR, DEV_LOCATION_MINOR));
 
     do_mount(&procfs, "proc", "/proc", "", 0);
     do_mount(&devptsfs, "devpts", "/dev/pts", "", 0);
 
     [self configureDns];
-    
-//#if !TARGET_OS_SIMULATOR
-//    NSString *sockTmp = [NSTemporaryDirectory() stringByAppendingString:@"ishsock"];
-//    sock_tmp_prefix = strdup(sockTmp.UTF8String);
-//#endif
-    
+        
     tty_drivers[TTY_CONSOLE_MAJOR] = &ios_console_driver;
+    
     set_console_device(TTY_CONSOLE_MAJOR, 1);
-    err = create_stdio("/dev/console", TTY_CONSOLE_MAJOR, 1);
-    if (err < 0)
-        return err;
+    create_stdio("/dev/console", TTY_CONSOLE_MAJOR, 1);
     
-    err = do_execve("/bin/login", 3, "/bin/login\0-f\0root\0", "TERM=xterm-256color\0");
-    if (err < 0)
-        return err;
+    do_execve("/bin/login", 3, "/bin/login\0-f\0root\0", "TERM=xterm-256color\0");
+    
     task_start(current);
-    
-    return 0;
 }
 
 + (void)configureDns {
