@@ -15,12 +15,12 @@ class MyVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        NSLog("com.mycom.mytest2.log: %@", "fdasfasfasfasfasdffasa")
+        NSLog("com.gg.mysh.log: %@", "viewDidLoad()")
         // Do any additional setup after loading the view.
 //        self.view.backgroundColor = UIColor.systemBlue
         setKeyboard()
-//        MyUtility.boot()
-        _ = boot()
+        MyUtility.boot()
+//        _ = boot()
         _ = startSession()
     }
     
@@ -177,12 +177,15 @@ class MyVC: UIViewController {
     }
     
     func boot() -> Int {
+        NSLog("com.gg.mysh.log: %@", "boot()")
+//        NSLog("com.gg.mysh.log: MyUtility.get_root(): %s", MyUtility.get_root())
         var root = Roots.instance().rootUrl(Roots.instance().defaultRoot)
-        NSLog("com.mycom.mytest2.log: root: %@", root.description)
+//        NSLog("com.gg.mysh.log: root: %s", (root.appendingPathComponent("data") as NSURL).fileSystemRepresentation)
 
-        let fakefs = UnsafeMutablePointer<fs_ops>.allocate(capacity: 1)
-//        var err = mount_root(fakefs, (root.appendingPathComponent("data") as NSURL).fileSystemRepresentation)
-        var err = mount_root(fakefs, MyUtility.get_root())
+//        let fakefs = UnsafeMutablePointer<fs_ops>.allocate(capacity: 1)
+//        var err = mount_root(&fakefs, (root.appendingPathComponent("data") as NSURL).fileSystemRepresentation)
+        var fakefs = fakefs
+        var err = mount_root(&fakefs, (root.appendingPathComponent("data") as NSURL).fileSystemRepresentation)
         if (err < 0){
             return Int(err)
         }
@@ -217,10 +220,10 @@ class MyVC: UIViewController {
         }
         generic_mknodat(MyUtility.get_at_pwd(), "/dev/location", S_IFCHR|0666, dev_make(DYN_DEV_MAJOR, DEV_LOCATION_MINOR))
         
-        let procfs = UnsafeMutablePointer<fs_ops>.allocate(capacity: 1)
-        do_mount(procfs, "proc", "/proc", "", 0)
-        let devptsfs = UnsafeMutablePointer<fs_ops>.allocate(capacity: 1)
-        do_mount(devptsfs, "devpts", "/dev/pts", "", 0)
+        var procfs = procfs
+        do_mount(&procfs, "proc", "/proc", "", 0)
+        var devptsfs = devptsfs
+        do_mount(&devptsfs, "devpts", "/dev/pts", "", 0)
         
         MyUtility.configureDns()
         

@@ -41,6 +41,8 @@
 //    NSLog(@"root: %@", root);
 
 //    int err = mount_root(&fakefs, [root URLByAppendingPathComponent:@"data"].fileSystemRepresentation);
+//    int err = mount_root(&fakefs, [self get_root]);
+    NSLog(@"com.gg.mysh.log: root: %s", [self get_root]);
     int err = mount_root(&fakefs, [self get_root]);
     if (err < 0)
         return err;
