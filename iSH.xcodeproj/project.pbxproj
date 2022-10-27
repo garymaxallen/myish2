@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		63021CA02902D6020001E3E0 /* libarchive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63021C9F2902D6020001E3E0 /* libarchive.a */; };
 		63021CA42902D6790001E3E0 /* libish_emu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63021CA12902D6790001E3E0 /* libish_emu.a */; };
 		63021CA52902D6790001E3E0 /* libish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63021CA22902D6790001E3E0 /* libish.a */; };
 		63021CA62902D6790001E3E0 /* libfakefs.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63021CA32902D6790001E3E0 /* libfakefs.a */; };
@@ -75,7 +74,6 @@
 				63021CA42902D6790001E3E0 /* libish_emu.a in Frameworks */,
 				63021CA52902D6790001E3E0 /* libish.a in Frameworks */,
 				63021CA62902D6790001E3E0 /* libfakefs.a in Frameworks */,
-				63021CA02902D6020001E3E0 /* libarchive.a in Frameworks */,
 				BB235537235D49B300139E00 /* CoreLocation.framework in Frameworks */,
 				BBA8E2C1236FF5EA00515F76 /* SystemConfiguration.framework in Frameworks */,
 				BBAEE339249B58E80069EBB5 /* libbz2.tbd in Frameworks */,
