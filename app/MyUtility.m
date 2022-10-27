@@ -96,9 +96,10 @@
 //    do_mount(&procfs, "proc", "/proc", "", 0);
 //    do_mount(&devptsfs, "devpts", "/dev/pts", "", 0);
     
-    [self configureDns];
+//    [self configureDns];
     
-    [MySwift boot2];
+//    [MySwift boot2];
+//    [self configureDns];
     
 //    tty_drivers[TTY_CONSOLE_MAJOR] = &ios_console_driver;
 //

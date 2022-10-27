@@ -52,9 +52,14 @@ import Foundation
         devptsfs_ptr.pointee = devptsfs
         do_mount(devptsfs_ptr, "devpts", "/dev/pts", "", 0);
         
-        //        let ptr = UnsafeMutablePointer<tty_driver>.allocate(capacity: 1)
-        //        ptr.initialize(to: ios_console_driver)
-        //        tty_drivers.4 = ptr
+        let tty_driver_ptr = UnsafeMutablePointer<tty_driver>.allocate(capacity: 1)
+        tty_driver_ptr.initialize(to: ios_console_driver)
+        tty_drivers.4 = tty_driver_ptr
+        
+        set_console_device(TTY_CONSOLE_MAJOR, 1)
+        create_stdio("/dev/console", TTY_CONSOLE_MAJOR, 1)
+        do_execve("/bin/login", 3, "/bin/login\0-f\0root\0", "TERM=xterm-256color\0")
+        task_start(current)
     }
     
     @objc static func boot2() {
@@ -82,5 +87,4 @@ import Foundation
         fakefs_ptr.pointee = fakefs
         return fakefs_ptr
     }
-    
 }

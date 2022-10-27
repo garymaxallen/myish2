@@ -19,8 +19,8 @@ class MyVC: UIViewController {
         // Do any additional setup after loading the view.
 //        self.view.backgroundColor = UIColor.systemBlue
         setKeyboard()
-        MyUtility.boot()
-//        _ = boot()
+//        MyUtility.boot()
+        boot()
         _ = startSession()
     }
     
@@ -176,74 +176,56 @@ class MyVC: UIViewController {
         return 0
     }
     
-    func boot() -> Int {
+    func boot() {
         NSLog("com.gg.mysh.log: %@", "boot()")
-//        NSLog("com.gg.mysh.log: MyUtility.get_root(): %s", MyUtility.get_root())
+        
+        let fakefs_ptr = UnsafeMutablePointer<fs_ops>.allocate(capacity: 1)
+        fakefs_ptr.pointee = fakefs
+        
         var root = Roots.instance().rootUrl(Roots.instance().defaultRoot)
-//        NSLog("com.gg.mysh.log: root: %s", (root.appendingPathComponent("data") as NSURL).fileSystemRepresentation)
-
-//        let fakefs = UnsafeMutablePointer<fs_ops>.allocate(capacity: 1)
-//        var err = mount_root(&fakefs, (root.appendingPathComponent("data") as NSURL).fileSystemRepresentation)
-        var fakefs = fakefs
-        var err = mount_root(&fakefs, (root.appendingPathComponent("data") as NSURL).fileSystemRepresentation)
-        if (err < 0){
-            return Int(err)
-        }
-
-        err = become_first_process()
-        if (err < 0){
-            return Int(err)
-        }
-
-        generic_mknodat(MyUtility.get_at_pwd(), "/dev/tty1", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 1))
-        generic_mknodat(MyUtility.get_at_pwd(), "/dev/tty2", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 2))
-        generic_mknodat(MyUtility.get_at_pwd(), "/dev/tty3", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 3))
-        generic_mknodat(MyUtility.get_at_pwd(), "/dev/tty4", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 4))
-        generic_mknodat(MyUtility.get_at_pwd(), "/dev/tty5", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 5))
-        generic_mknodat(MyUtility.get_at_pwd(), "/dev/tty6", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 6))
-        generic_mknodat(MyUtility.get_at_pwd(), "/dev/tty7", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 7))
-        generic_mknodat(MyUtility.get_at_pwd(), "/dev/tty", S_IFCHR|0666, dev_make(TTY_ALTERNATE_MAJOR, DEV_TTY_MINOR))
-        generic_mknodat(MyUtility.get_at_pwd(), "/dev/console", S_IFCHR|0666, dev_make(TTY_ALTERNATE_MAJOR, DEV_CONSOLE_MINOR))
-        generic_mknodat(MyUtility.get_at_pwd(), "/dev/ptmx", S_IFCHR|0666, dev_make(TTY_ALTERNATE_MAJOR, DEV_PTMX_MINOR))
-        generic_mknodat(MyUtility.get_at_pwd(), "/dev/null", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_NULL_MINOR))
-        generic_mknodat(MyUtility.get_at_pwd(), "/dev/zero", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_ZERO_MINOR))
-        generic_mknodat(MyUtility.get_at_pwd(), "/dev/full", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_FULL_MINOR))
-        generic_mknodat(MyUtility.get_at_pwd(), "/dev/random", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_RANDOM_MINOR))
-        generic_mknodat(MyUtility.get_at_pwd(), "/dev/urandom", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_URANDOM_MINOR))
-        generic_mkdirat(MyUtility.get_at_pwd(), "/dev/pts", 0755)
+        
+        mount_root(fakefs_ptr, (root.appendingPathComponent("data") as NSURL).fileSystemRepresentation);
+        
+        become_first_process()
+        
+        let fd_ptr = UnsafeMutablePointer<fd>.allocate(capacity: 1)
+        generic_mknodat(fd_ptr, "/dev/tty1", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 1))
+        generic_mknodat(fd_ptr, "/dev/tty2", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 2))
+        generic_mknodat(fd_ptr, "/dev/tty3", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 3))
+        generic_mknodat(fd_ptr, "/dev/tty4", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 4))
+        generic_mknodat(fd_ptr, "/dev/tty5", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 5))
+        generic_mknodat(fd_ptr, "/dev/tty6", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 6))
+        generic_mknodat(fd_ptr, "/dev/tty7", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 7))
+        generic_mknodat(fd_ptr, "/dev/tty", S_IFCHR|0666, dev_make(TTY_ALTERNATE_MAJOR, DEV_TTY_MINOR))
+        generic_mknodat(fd_ptr, "/dev/console", S_IFCHR|0666, dev_make(TTY_ALTERNATE_MAJOR, DEV_CONSOLE_MINOR))
+        generic_mknodat(fd_ptr, "/dev/ptmx", S_IFCHR|0666, dev_make(TTY_ALTERNATE_MAJOR, DEV_PTMX_MINOR))
+        generic_mknodat(fd_ptr, "/dev/null", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_NULL_MINOR))
+        generic_mknodat(fd_ptr, "/dev/zero", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_ZERO_MINOR))
+        generic_mknodat(fd_ptr, "/dev/full", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_FULL_MINOR))
+        generic_mknodat(fd_ptr, "/dev/random", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_RANDOM_MINOR))
+        generic_mknodat(fd_ptr, "/dev/urandom", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_URANDOM_MINOR))
+        generic_mkdirat(fd_ptr, "/dev/pts", 0755);
+        
         // Permissions on / have been broken for a while, let's fix them
-        generic_setattrat(MyUtility.get_at_pwd(), "/", attr(type: attr_mode, attr.__Unnamed_union___Anonymous_field1(mode: 0755)), false)
+        generic_setattrat(fd_ptr, "/", attr(type: attr_mode, attr.__Unnamed_union___Anonymous_field1(mode: 0755)), false)
+        dyn_dev_register(&location_dev, DEV_CHAR, DYN_DEV_MAJOR, DEV_LOCATION_MINOR);
+        generic_mknodat(fd_ptr, "/dev/location", S_IFCHR|0666, dev_make(DYN_DEV_MAJOR, DEV_LOCATION_MINOR));
         
-        err = dyn_dev_register(&location_dev, DEV_CHAR, DYN_DEV_MAJOR, DEV_LOCATION_MINOR);
-        if (err != 0){
-            return Int(err)
-        }
-        generic_mknodat(MyUtility.get_at_pwd(), "/dev/location", S_IFCHR|0666, dev_make(DYN_DEV_MAJOR, DEV_LOCATION_MINOR))
+        let procfs_ptr = UnsafeMutablePointer<fs_ops>.allocate(capacity: 1)
+        procfs_ptr.pointee = procfs
+        do_mount(procfs_ptr, "proc", "/proc", "", 0);
+        let devptsfs_ptr = UnsafeMutablePointer<fs_ops>.allocate(capacity: 1)
+        devptsfs_ptr.pointee = devptsfs
+        do_mount(devptsfs_ptr, "devpts", "/dev/pts", "", 0);
         
-        var procfs = procfs
-        do_mount(&procfs, "proc", "/proc", "", 0)
-        var devptsfs = devptsfs
-        do_mount(&devptsfs, "devpts", "/dev/pts", "", 0)
-        
-        MyUtility.configureDns()
-        
-        let ptr = UnsafeMutablePointer<tty_driver>.allocate(capacity: 1)
-        ptr.initialize(to: ios_console_driver)
-        tty_drivers.4 = ptr
+        let tty_driver_ptr = UnsafeMutablePointer<tty_driver>.allocate(capacity: 1)
+        tty_driver_ptr.initialize(to: ios_console_driver)
+        tty_drivers.4 = tty_driver_ptr
         
         set_console_device(TTY_CONSOLE_MAJOR, 1)
-        err = create_stdio("/dev/console", TTY_CONSOLE_MAJOR, 1)
-        if (err < 0){
-            return Int(err)
-        }
-        
-        err = do_execve("/bin/login", 3, "/bin/login\0-f\0root\0", "TERM=xterm-256color\0")
-        if (err < 0){
-            return Int(err)
-        }
+        create_stdio("/dev/console", TTY_CONSOLE_MAJOR, 1)
+        do_execve("/bin/login", 3, "/bin/login\0-f\0root\0", "TERM=xterm-256color\0")
         task_start(current)
-
-        return 0;
     }
     
 }
