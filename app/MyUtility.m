@@ -21,20 +21,6 @@
 
 #import "iSH-Swift.h"
 
-static NSURL *RootsDir2() {
-    static NSURL *rootsDir;
-    static dispatch_once_t token;
-    dispatch_once(&token, ^{
-        rootsDir = [[NSFileManager.defaultManager containerURLForSecurityApplicationGroupIdentifier:@"group.app.ish.iSH"] URLByAppendingPathComponent:@"roots"];
-        NSFileManager *manager = [NSFileManager defaultManager];
-        [manager createDirectoryAtURL:rootsDir
-          withIntermediateDirectories:YES
-                           attributes:@{}
-                                error:nil];
-    });
-    return rootsDir;
-}
-
 @interface MyUtility()
 
 @end
@@ -46,8 +32,24 @@ static NSURL *RootsDir2() {
 }
 
 + (NSURL *)get_root {
-    return [RootsDir2() URLByAppendingPathComponent:@"default"];
-//    return [[Roots.instance rootUrl:Roots.instance.defaultRoot]  URLByAppendingPathComponent:@"data"].fileSystemRepresentation;
+//    return [RootsDir2() URLByAppendingPathComponent:@"default"];
+    static NSURL *rootsDir;
+    rootsDir = [[NSFileManager.defaultManager containerURLForSecurityApplicationGroupIdentifier:@"group.app.ish.iSH"] URLByAppendingPathComponent:@"roots"];
+    NSFileManager *manager = [NSFileManager defaultManager];
+    [manager createDirectoryAtURL:rootsDir
+      withIntermediateDirectories:YES
+                       attributes:@{}
+                            error:nil];
+//    static dispatch_once_t token;
+//    dispatch_once(&token, ^{
+//        rootsDir = [[NSFileManager.defaultManager containerURLForSecurityApplicationGroupIdentifier:@"group.app.ish.iSH"] URLByAppendingPathComponent:@"roots"];
+//        NSFileManager *manager = [NSFileManager defaultManager];
+//        [manager createDirectoryAtURL:rootsDir
+//          withIntermediateDirectories:YES
+//                           attributes:@{}
+//                                error:nil];
+//    });
+    return [rootsDir URLByAppendingPathComponent:@"default"];
 }
 
 + (void)boot {
