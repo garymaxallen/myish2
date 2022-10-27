@@ -25,6 +25,7 @@ struct tty;
 - (void)sendInput:(NSData *)input;
 
 - (NSString *)arrow:(char)direction;
+//- (NSString *)arrowLeft;
 
 // Make this terminal no longer be the singleton terminal with its type and number. Will happen eventually if all references go away, but sometimes you want it to happen now.
 - (void)destroy;

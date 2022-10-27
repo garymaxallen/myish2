@@ -125,19 +125,19 @@ class MyVC: UIViewController {
     }
     
     @objc func pressLeft() {
-        terminalView.insertText(terminal.arrow(CChar("D")!))
+        terminalView.insertText("\u{1b}[D")
     }
     
     @objc func pressRight() {
-        terminalView.insertText(terminal.arrow(CChar("C")!))
+        terminalView.insertText("\u{1b}[C")
     }
     
     @objc func pressUp() {
-        terminalView.insertText(terminal.arrow(CChar("A")!))
+        terminalView.insertText("\u{1b}[A")
     }
     
     @objc func pressDown() {
-        terminalView.insertText(terminal.arrow(CChar("B")!))
+        terminalView.insertText("\u{1b}[B")
     }
     
     @objc func pressPaste() {

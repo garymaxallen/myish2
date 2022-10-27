@@ -186,6 +186,12 @@ static NSMapTable<NSUUID *, Terminal *> *terminalsByUUID;
     return [NSString stringWithFormat:@"\x1b%c%c", self.applicationCursor ? 'O' : '[', direction];
 }
 
+//- (NSString *)arrowLeft {
+//    NSString *str = [NSString stringWithFormat:@"\x1b%c%c", self.applicationCursor ? 'O' : '[', 'D'];
+//    NSLog(@"com.gg.mysh.log: str: %@", str);
+//    return str;
+//}
+
 - (void)refresh {
     if (!self.loaded)
         return;
