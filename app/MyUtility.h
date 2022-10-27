@@ -12,7 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MyUtility : NSObject
 
 + (void)boot;
-+ (void)configureDns;
 + (struct fd *)get_at_pwd;
 + (NSURL *)get_root;
 
