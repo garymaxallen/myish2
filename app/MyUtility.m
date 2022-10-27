@@ -36,72 +36,78 @@
 }
 
 + (void)boot {
-//    [MySwift printSome];
-//    NSURL *rootsDir = [[NSFileManager.defaultManager containerURLForSecurityApplicationGroupIdentifier:@"group.app.ish.iSH"] URLByAppendingPathComponent:@"roots"];
-//    NSURL *root = [rootsDir URLByAppendingPathComponent:[NSUserDefaults.standardUserDefaults stringForKey:@"Default Root"]];
-
-//    NSURL *root = [Roots.instance rootUrl:Roots.instance.defaultRoot];
-//    NSLog(@"root: %@", root);
-
-//    int err = mount_root(&fakefs, [root URLByAppendingPathComponent:@"data"].fileSystemRepresentation);
-//    int err = mount_root(&fakefs, [self get_root]);
+    //    [MySwift printSome];
+    //    NSURL *rootsDir = [[NSFileManager.defaultManager containerURLForSecurityApplicationGroupIdentifier:@"group.app.ish.iSH"] URLByAppendingPathComponent:@"roots"];
+    //    NSURL *root = [rootsDir URLByAppendingPathComponent:[NSUserDefaults.standardUserDefaults stringForKey:@"Default Root"]];
+    
+    //    NSURL *root = [Roots.instance rootUrl:Roots.instance.defaultRoot];
+    //    NSLog(@"root: %@", root);
+    
+    //    int err = mount_root(&fakefs, [root URLByAppendingPathComponent:@"data"].fileSystemRepresentation);
+    //    int err = mount_root(&fakefs, [self get_root]);
     
     
-//    NSLog(@"com.gg.mysh.log: root: %s", [self get_root]);
-//    mount_root(&fakefs, [[Roots.instance rootUrl:Roots.instance.defaultRoot]  URLByAppendingPathComponent:@"data"].fileSystemRepresentation);
-    mount_root(&fakefs, [MySwift get_root]);
-//    [MySwift printSome];
-
+    //    NSLog(@"com.gg.mysh.log: root: %s", [self get_root]);
+    //    mount_root(&fakefs, [[Roots.instance rootUrl:Roots.instance.defaultRoot]  URLByAppendingPathComponent:@"data"].fileSystemRepresentation);
+    
+//    mount_root(&fakefs, [MySwift get_root]);
+//    mount_root([MySwift get_fakefs], [MySwift get_root]);
+    
     // need to do this first so that we can have a valid current for the generic_mknod calls
-    become_first_process();
-    
-    
+    //    become_first_process();
 //    [MySwift printSome];
-
+    
     // create some device nodes
     // this will do nothing if they already exist
-//    NSLog(@"com.mycom.mytest2.log: root: %@", AT_PWD);
-//    generic_mknodat([self get_at_pwd], "/dev/tty1", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 1));
-    generic_mknodat((struct fd *) -2, "/dev/tty1", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 1));
-    generic_mknodat(AT_PWD, "/dev/tty2", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 2));
-    generic_mknodat(AT_PWD, "/dev/tty3", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 3));
-    generic_mknodat(AT_PWD, "/dev/tty4", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 4));
-    generic_mknodat(AT_PWD, "/dev/tty5", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 5));
-    generic_mknodat(AT_PWD, "/dev/tty6", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 6));
-    generic_mknodat(AT_PWD, "/dev/tty7", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 7));
-
-    generic_mknodat(AT_PWD, "/dev/tty", S_IFCHR|0666, dev_make(TTY_ALTERNATE_MAJOR, DEV_TTY_MINOR));
-    generic_mknodat(AT_PWD, "/dev/console", S_IFCHR|0666, dev_make(TTY_ALTERNATE_MAJOR, DEV_CONSOLE_MINOR));
-    generic_mknodat(AT_PWD, "/dev/ptmx", S_IFCHR|0666, dev_make(TTY_ALTERNATE_MAJOR, DEV_PTMX_MINOR));
-
-    generic_mknodat(AT_PWD, "/dev/null", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_NULL_MINOR));
-    generic_mknodat(AT_PWD, "/dev/zero", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_ZERO_MINOR));
-    generic_mknodat(AT_PWD, "/dev/full", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_FULL_MINOR));
-    generic_mknodat(AT_PWD, "/dev/random", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_RANDOM_MINOR));
-    generic_mknodat(AT_PWD, "/dev/urandom", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_URANDOM_MINOR));
+    //    NSLog(@"com.mycom.mytest2.log: root: %@", AT_PWD);
+    //    generic_mknodat([self get_at_pwd], "/dev/tty1", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 1));
     
-    generic_mkdirat(AT_PWD, "/dev/pts", 0755);
+//    struct fd *ptr = (struct fd *)-2;
+//    struct fd *ptr = (struct fd *)-100;
+//    generic_mknodat([MySwift get_fd], "/dev/tty1", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 1));
+//    generic_mknodat(ptr, "/dev/tty2", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 2));
+//    generic_mknodat(ptr, "/dev/tty3", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 3));
+//    generic_mknodat(ptr, "/dev/tty4", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 4));
+//    generic_mknodat(ptr, "/dev/tty5", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 5));
+//    generic_mknodat(ptr, "/dev/tty6", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 6));
+//    generic_mknodat(ptr, "/dev/tty7", S_IFCHR|0666, dev_make(TTY_CONSOLE_MAJOR, 7));
+//
+//    generic_mknodat(ptr, "/dev/tty", S_IFCHR|0666, dev_make(TTY_ALTERNATE_MAJOR, DEV_TTY_MINOR));
+//    generic_mknodat(ptr, "/dev/console", S_IFCHR|0666, dev_make(TTY_ALTERNATE_MAJOR, DEV_CONSOLE_MINOR));
+//    generic_mknodat(ptr, "/dev/ptmx", S_IFCHR|0666, dev_make(TTY_ALTERNATE_MAJOR, DEV_PTMX_MINOR));
+//
+//    generic_mknodat(ptr, "/dev/null", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_NULL_MINOR));
+//    generic_mknodat(ptr, "/dev/zero", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_ZERO_MINOR));
+//    generic_mknodat(ptr, "/dev/full", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_FULL_MINOR));
+//    generic_mknodat(ptr, "/dev/random", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_RANDOM_MINOR));
+//    generic_mknodat(ptr, "/dev/urandom", S_IFCHR|0666, dev_make(MEM_MAJOR, DEV_URANDOM_MINOR));
+//
+//    generic_mkdirat(ptr, "/dev/pts", 0755);
+//
+//    // Permissions on / have been broken for a while, let's fix them
+//    generic_setattrat(ptr, "/", (struct attr) {.type = attr_mode, .mode = 0755}, false);
     
-    // Permissions on / have been broken for a while, let's fix them
-    generic_setattrat(AT_PWD, "/", (struct attr) {.type = attr_mode, .mode = 0755}, false);
+//    dyn_dev_register(&location_dev, DEV_CHAR, DYN_DEV_MAJOR, DEV_LOCATION_MINOR);
+//    
+//    generic_mknodat(ptr, "/dev/location", S_IFCHR|0666, dev_make(DYN_DEV_MAJOR, DEV_LOCATION_MINOR));
     
-    dyn_dev_register(&location_dev, DEV_CHAR, DYN_DEV_MAJOR, DEV_LOCATION_MINOR);
+    [MySwift boot1];
     
-    generic_mknodat(AT_PWD, "/dev/location", S_IFCHR|0666, dev_make(DYN_DEV_MAJOR, DEV_LOCATION_MINOR));
-
-    do_mount(&procfs, "proc", "/proc", "", 0);
-    do_mount(&devptsfs, "devpts", "/dev/pts", "", 0);
-
+//    do_mount(&procfs, "proc", "/proc", "", 0);
+//    do_mount(&devptsfs, "devpts", "/dev/pts", "", 0);
+    
     [self configureDns];
-        
-    tty_drivers[TTY_CONSOLE_MAJOR] = &ios_console_driver;
     
-    set_console_device(TTY_CONSOLE_MAJOR, 1);
-    create_stdio("/dev/console", TTY_CONSOLE_MAJOR, 1);
+    [MySwift boot2];
     
-    do_execve("/bin/login", 3, "/bin/login\0-f\0root\0", "TERM=xterm-256color\0");
-    
-    task_start(current);
+//    tty_drivers[TTY_CONSOLE_MAJOR] = &ios_console_driver;
+//
+//    set_console_device(TTY_CONSOLE_MAJOR, 1);
+//    create_stdio("/dev/console", TTY_CONSOLE_MAJOR, 1);
+//
+//    do_execve("/bin/login", 3, "/bin/login\0-f\0root\0", "TERM=xterm-256color\0");
+//
+//    task_start(current);
 }
 
 + (void)configureDns {
