@@ -33,7 +33,7 @@
 
 + (NSURL *)get_root {
 //    return [RootsDir2() URLByAppendingPathComponent:@"default"];
-    static NSURL *rootsDir;
+    NSURL *rootsDir;
     rootsDir = [[NSFileManager.defaultManager containerURLForSecurityApplicationGroupIdentifier:@"group.app.ish.iSH"] URLByAppendingPathComponent:@"roots"];
     NSFileManager *manager = [NSFileManager defaultManager];
     [manager createDirectoryAtURL:rootsDir
