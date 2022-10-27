@@ -220,19 +220,19 @@ static NSMapTable<NSUUID *, Terminal *> *terminalsByUUID;
     }];
 }
 
-+ (void)convertCommand:(NSArray<NSString *> *)command toArgs:(char *)argv limitSize:(size_t)maxSize {
-    char *p = argv;
-    for (NSString *cmd in command) {
-        const char *c = cmd.UTF8String;
-        // Save space for the final NUL byte in argv
-        while (p < argv + maxSize - 1 && (*p++ = *c++));
-        // If we reach the end of the buffer, the last string still needs to be
-        // NUL terminated
-        *p = '\0';
-    }
-    // Add the final NUL byte to argv
-    *++p = '\0';
-}
+//+ (void)convertCommand:(NSArray<NSString *> *)command toArgs:(char *)argv limitSize:(size_t)maxSize {
+//    char *p = argv;
+//    for (NSString *cmd in command) {
+//        const char *c = cmd.UTF8String;
+//        // Save space for the final NUL byte in argv
+//        while (p < argv + maxSize - 1 && (*p++ = *c++));
+//        // If we reach the end of the buffer, the last string still needs to be
+//        // NUL terminated
+//        *p = '\0';
+//    }
+//    // Add the final NUL byte to argv
+//    *++p = '\0';
+//}
 
 + (Terminal *)terminalWithType:(int)type number:(int)number {
     return [[Terminal alloc] initWithType:type number:number];

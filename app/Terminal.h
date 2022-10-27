@@ -19,7 +19,7 @@ struct tty;
 + (Terminal *)terminalWithUUID:(NSUUID *)uuid;
 @property (readonly) NSUUID *uuid;
 
-+ (void)convertCommand:(NSArray<NSString *> *)command toArgs:(char *)argv limitSize:(size_t)maxSize;
+//+ (void)convertCommand:(NSArray<NSString *> *)command toArgs:(char *)argv limitSize:(size_t)maxSize;
 
 - (int)sendOutput:(const void *)buf length:(int)len;
 - (void)sendInput:(NSData *)input;
