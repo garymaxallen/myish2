@@ -18,8 +18,6 @@
 		632B84EF29068296006E182F /* Terminal.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0FC5911F980A6B00803272 /* Terminal.m */; };
 		632B84F029068296006E182F /* ScrollbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB23F58C231E1D1400585522 /* ScrollbarView.m */; };
 		632B84F129068296006E182F /* DelayedUITask.m in Sources */ = {isa = PBXBuildFile; fileRef = BB455E101FB37F6600AFB48B /* DelayedUITask.m */; };
-		632B84F229068296006E182F /* PasteboardDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 650B337322EA235C00B4C03E /* PasteboardDevice.m */; };
-		632B84F329068296006E182F /* LocationDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = BB235533235D488400139E00 /* LocationDevice.m */; };
 		63DEDCE429097D0C00E55F3B /* MySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DEDCE329097D0C00E55F3B /* MySwift.swift */; };
 		BB235537235D49B300139E00 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB235536235D49B300139E00 /* CoreLocation.framework */; };
 		BB6DB261216435340047A611 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BB6DB260216435330047A611 /* libiconv.tbd */; };
@@ -41,12 +39,8 @@
 		630EFB1C290831C90002A1F5 /* MyUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyUtility.h; sourceTree = "<group>"; };
 		630EFB1D290831C90002A1F5 /* MyUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyUtility.m; sourceTree = "<group>"; };
 		63DEDCE329097D0C00E55F3B /* MySwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySwift.swift; sourceTree = "<group>"; };
-		650B337222EA235C00B4C03E /* PasteboardDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasteboardDevice.h; sourceTree = "<group>"; };
-		650B337322EA235C00B4C03E /* PasteboardDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasteboardDevice.m; sourceTree = "<group>"; };
 		BB0FC5901F980A6B00803272 /* Terminal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Terminal.h; sourceTree = "<group>"; };
 		BB0FC5911F980A6B00803272 /* Terminal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Terminal.m; sourceTree = "<group>"; };
-		BB235533235D488400139E00 /* LocationDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationDevice.m; sourceTree = "<group>"; };
-		BB235535235D489400139E00 /* LocationDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationDevice.h; sourceTree = "<group>"; };
 		BB235536235D49B300139E00 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		BB23F58B231E1D1400585522 /* ScrollbarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollbarView.h; sourceTree = "<group>"; };
 		BB23F58C231E1D1400585522 /* ScrollbarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollbarView.m; sourceTree = "<group>"; };
@@ -118,10 +112,6 @@
 				BB23F58C231E1D1400585522 /* ScrollbarView.m */,
 				BB455E0F1FB37F6600AFB48B /* DelayedUITask.h */,
 				BB455E101FB37F6600AFB48B /* DelayedUITask.m */,
-				650B337222EA235C00B4C03E /* PasteboardDevice.h */,
-				650B337322EA235C00B4C03E /* PasteboardDevice.m */,
-				BB235535235D489400139E00 /* LocationDevice.h */,
-				BB235533235D488400139E00 /* LocationDevice.m */,
 				BB792B611F96D90D00FFB7A4 /* Info.plist */,
 				630EFB1129082CAE0002A1F5 /* mysh.xcconfig */,
 			);
@@ -216,8 +206,6 @@
 				632B84EF29068296006E182F /* Terminal.m in Sources */,
 				632B84F029068296006E182F /* ScrollbarView.m in Sources */,
 				632B84F129068296006E182F /* DelayedUITask.m in Sources */,
-				632B84F229068296006E182F /* PasteboardDevice.m in Sources */,
-				632B84F329068296006E182F /* LocationDevice.m in Sources */,
 				630EFB1E290831C90002A1F5 /* MyUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,8 +6,6 @@
 
 #import "TerminalView.h"
 #import "Terminal.h"
-//#import "Roots.h"
-
 
 #include "kernel/init.h"
 #include "kernel/calls.h"
@@ -15,8 +13,6 @@
 #include <resolv.h>
 #include <arpa/inet.h>
 #include <netdb.h>
-#import "LocationDevice.h"
+//#import "LocationDevice.h"
 #include "fs/dyndev.h"
 #include "fs/path.h"
-
-//#include "kernel/fs.h"

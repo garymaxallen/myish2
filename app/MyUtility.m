@@ -10,7 +10,7 @@
 #include "kernel/init.h"
 #include "fs/devices.h"
 #include "fs/path.h"
-#import "LocationDevice.h"
+//#import "LocationDevice.h"
 #include "fs/dyndev.h"
 //#import "Terminal.h"
 #include "kernel/calls.h"

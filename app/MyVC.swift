@@ -195,8 +195,8 @@ class MyVC: UIViewController {
         
         // Permissions on / have been broken for a while, let's fix them
         generic_setattrat(fd_ptr, "/", attr(type: attr_mode, attr.__Unnamed_union___Anonymous_field1(mode: 0755)), false)
-        dyn_dev_register(&location_dev, DEV_CHAR, DYN_DEV_MAJOR, DEV_LOCATION_MINOR)
-        generic_mknodat(fd_ptr, "/dev/location", S_IFCHR|0666, dev_make(DYN_DEV_MAJOR, DEV_LOCATION_MINOR))
+//        dyn_dev_register(&location_dev, DEV_CHAR, DYN_DEV_MAJOR, DEV_LOCATION_MINOR)
+//        generic_mknodat(fd_ptr, "/dev/location", S_IFCHR|0666, dev_make(DYN_DEV_MAJOR, DEV_LOCATION_MINOR))
         
         let procfs_ptr = UnsafeMutablePointer<fs_ops>.allocate(capacity: 1)
         procfs_ptr.pointee = procfs
