@@ -17,9 +17,23 @@
 #include <resolv.h>
 #include <netdb.h>
 
-#import "Roots.h"
+//#import "Roots.h"
 
 #import "iSH-Swift.h"
+
+static NSURL *RootsDir2() {
+    static NSURL *rootsDir;
+    static dispatch_once_t token;
+    dispatch_once(&token, ^{
+        rootsDir = [[NSFileManager.defaultManager containerURLForSecurityApplicationGroupIdentifier:@"group.app.ish.iSH"] URLByAppendingPathComponent:@"roots"];
+        NSFileManager *manager = [NSFileManager defaultManager];
+        [manager createDirectoryAtURL:rootsDir
+          withIntermediateDirectories:YES
+                           attributes:@{}
+                                error:nil];
+    });
+    return rootsDir;
+}
 
 @interface MyUtility()
 
@@ -31,8 +45,9 @@
     return AT_PWD;
 }
 
-+ (const char *)get_root {
-    return [[Roots.instance rootUrl:Roots.instance.defaultRoot]  URLByAppendingPathComponent:@"data"].fileSystemRepresentation;
++ (NSURL *)get_root {
+    return [RootsDir2() URLByAppendingPathComponent:@"default"];
+//    return [[Roots.instance rootUrl:Roots.instance.defaultRoot]  URLByAppendingPathComponent:@"data"].fileSystemRepresentation;
 }
 
 + (void)boot {
@@ -91,7 +106,7 @@
 //    
 //    generic_mknodat(ptr, "/dev/location", S_IFCHR|0666, dev_make(DYN_DEV_MAJOR, DEV_LOCATION_MINOR));
     
-    [MySwift boot1];
+//    [MySwift boot1];
     
 //    do_mount(&procfs, "proc", "/proc", "", 0);
 //    do_mount(&devptsfs, "devpts", "/dev/pts", "", 0);

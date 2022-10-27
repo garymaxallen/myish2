@@ -19,9 +19,8 @@ class MyVC: UIViewController {
         // Do any additional setup after loading the view.
 //        self.view.backgroundColor = UIColor.systemBlue
         setKeyboard()
-//        MyUtility.boot()
         boot()
-        _ = startSession()
+        startSession()
     }
     
     func setKeyboard() {
@@ -148,11 +147,8 @@ class MyVC: UIViewController {
         }
     }
     
-    func startSession() -> Int{
-        var err = become_new_init_child()
-        if (err < 0){
-            return Int(err)
-        }
+    func startSession(){
+        become_new_init_child()
         
         let tty = UnsafeMutablePointer<UnsafeMutablePointer<tty>?>.allocate(capacity: 1)
         tty.initialize(to: UnsafeMutablePointer<tty>.allocate(capacity: 1))
@@ -161,19 +157,11 @@ class MyVC: UIViewController {
         
         let stdioFile = "/dev/pts/\(String(describing: tty.pointee?.pointee.num))"
         
-        err = create_stdio((stdioFile as NSString?)?.fileSystemRepresentation, TTY_PSEUDO_SLAVE_MAJOR, (tty.pointee?.pointee.num)!)
-        if (err < 0){
-            return Int(err)
-        }
+        create_stdio((stdioFile as NSString?)?.fileSystemRepresentation, TTY_PSEUDO_SLAVE_MAJOR, (tty.pointee?.pointee.num)!)
         tty_release(tty.pointee)
         
-        err = do_execve("/bin/login", 3, "/bin/login\0-f\0root\0", "TERM=xterm-256color\0")
-        if (err < 0){
-            return Int(err)
-        }
+        do_execve("/bin/login", 3, "/bin/login\0-f\0root\0", "TERM=xterm-256color\0")
         task_start(current)
-        
-        return 0
     }
     
     func boot() {
@@ -182,9 +170,10 @@ class MyVC: UIViewController {
         let fakefs_ptr = UnsafeMutablePointer<fs_ops>.allocate(capacity: 1)
         fakefs_ptr.pointee = fakefs
         
-        var root = Roots.instance().rootUrl(Roots.instance().defaultRoot)
-        
-        mount_root(fakefs_ptr, (root.appendingPathComponent("data") as NSURL).fileSystemRepresentation);
+//        NSLog("com.gg.mysh.log: Roots.instance().defaultRoot: %@", Roots.instance().defaultRoot)
+//        var root = Roots.instance().rootUrl("default")
+        var root = MyUtility.get_root()
+        mount_root(fakefs_ptr, (root.appendingPathComponent("data") as NSURL).fileSystemRepresentation)
         
         become_first_process()
         
@@ -208,12 +197,12 @@ class MyVC: UIViewController {
         
         // Permissions on / have been broken for a while, let's fix them
         generic_setattrat(fd_ptr, "/", attr(type: attr_mode, attr.__Unnamed_union___Anonymous_field1(mode: 0755)), false)
-        dyn_dev_register(&location_dev, DEV_CHAR, DYN_DEV_MAJOR, DEV_LOCATION_MINOR);
-        generic_mknodat(fd_ptr, "/dev/location", S_IFCHR|0666, dev_make(DYN_DEV_MAJOR, DEV_LOCATION_MINOR));
+        dyn_dev_register(&location_dev, DEV_CHAR, DYN_DEV_MAJOR, DEV_LOCATION_MINOR)
+        generic_mknodat(fd_ptr, "/dev/location", S_IFCHR|0666, dev_make(DYN_DEV_MAJOR, DEV_LOCATION_MINOR))
         
         let procfs_ptr = UnsafeMutablePointer<fs_ops>.allocate(capacity: 1)
         procfs_ptr.pointee = procfs
-        do_mount(procfs_ptr, "proc", "/proc", "", 0);
+        do_mount(procfs_ptr, "proc", "/proc", "", 0)
         let devptsfs_ptr = UnsafeMutablePointer<fs_ops>.allocate(capacity: 1)
         devptsfs_ptr.pointee = devptsfs
         do_mount(devptsfs_ptr, "devpts", "/dev/pts", "", 0);

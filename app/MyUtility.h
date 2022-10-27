@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)boot;
 + (void)configureDns;
 + (struct fd *)get_at_pwd;
-+ (const char *)get_root;
++ (NSURL *)get_root;
 
 @end
 
