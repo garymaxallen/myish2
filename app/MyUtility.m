@@ -12,7 +12,7 @@
 #include "fs/path.h"
 #import "LocationDevice.h"
 #include "fs/dyndev.h"
-#import "Terminal.h"
+//#import "Terminal.h"
 #include "kernel/calls.h"
 #include <resolv.h>
 #include <netdb.h>
@@ -33,13 +33,13 @@
 
 + (NSURL *)get_root {
 //    return [RootsDir2() URLByAppendingPathComponent:@"default"];
-    NSURL *rootsDir;
-    rootsDir = [[NSFileManager.defaultManager containerURLForSecurityApplicationGroupIdentifier:@"group.app.ish.iSH"] URLByAppendingPathComponent:@"roots"];
-    NSFileManager *manager = [NSFileManager defaultManager];
-    [manager createDirectoryAtURL:rootsDir
-      withIntermediateDirectories:YES
-                       attributes:@{}
-                            error:nil];
+//    NSURL *rootsDir;
+//    rootsDir = [[NSFileManager.defaultManager containerURLForSecurityApplicationGroupIdentifier:@"group.app.ish.iSH"] URLByAppendingPathComponent:@"roots"];
+//    NSFileManager *manager = [NSFileManager defaultManager];
+//    [manager createDirectoryAtURL:rootsDir
+//      withIntermediateDirectories:YES
+//                       attributes:@{}
+//                            error:nil];
 //    static dispatch_once_t token;
 //    dispatch_once(&token, ^{
 //        rootsDir = [[NSFileManager.defaultManager containerURLForSecurityApplicationGroupIdentifier:@"group.app.ish.iSH"] URLByAppendingPathComponent:@"roots"];
@@ -49,7 +49,8 @@
 //                           attributes:@{}
 //                                error:nil];
 //    });
-    return [rootsDir URLByAppendingPathComponent:@"default"];
+//    return [rootsDir URLByAppendingPathComponent:@"default"];
+    return [[NSFileManager.defaultManager containerURLForSecurityApplicationGroupIdentifier:@"group.app.ish.iSH"] URLByAppendingPathComponent:@"roots/default/data"];
 }
 
 + (void)boot {

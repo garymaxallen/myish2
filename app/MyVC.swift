@@ -170,10 +170,8 @@ class MyVC: UIViewController {
         let fakefs_ptr = UnsafeMutablePointer<fs_ops>.allocate(capacity: 1)
         fakefs_ptr.pointee = fakefs
         
-//        NSLog("com.gg.mysh.log: Roots.instance().defaultRoot: %@", Roots.instance().defaultRoot)
-//        var root = Roots.instance().rootUrl("default")
-        var root = MyUtility.get_root()
-        mount_root(fakefs_ptr, (root.appendingPathComponent("data") as NSURL).fileSystemRepresentation)
+        var root = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.app.ish.iSH")!.appendingPathComponent("roots/default/data")
+        mount_root(fakefs_ptr, (root as NSURL).fileSystemRepresentation)
         
         become_first_process()
         

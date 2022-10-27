@@ -14,7 +14,6 @@
 		630EFB19290830CF0002A1F5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EFB18290830CF0002A1F5 /* SceneDelegate.swift */; };
 		630EFB1B290831050002A1F5 /* MyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EFB1A290831050002A1F5 /* MyVC.swift */; };
 		630EFB1E290831C90002A1F5 /* MyUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 630EFB1D290831C90002A1F5 /* MyUtility.m */; };
-		632B84EB29068296006E182F /* CurrentRoot.m in Sources */ = {isa = PBXBuildFile; fileRef = BB565EA32734F1FB00C93EAE /* CurrentRoot.m */; };
 		632B84EE29068296006E182F /* TerminalView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB78AB2A1FAD22440013E782 /* TerminalView.m */; };
 		632B84EF29068296006E182F /* Terminal.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0FC5911F980A6B00803272 /* Terminal.m */; };
 		632B84F029068296006E182F /* ScrollbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB23F58C231E1D1400585522 /* ScrollbarView.m */; };
@@ -54,8 +53,6 @@
 		BB28C755268956C900BDC834 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		BB455E0F1FB37F6600AFB48B /* DelayedUITask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DelayedUITask.h; sourceTree = "<group>"; };
 		BB455E101FB37F6600AFB48B /* DelayedUITask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DelayedUITask.m; sourceTree = "<group>"; };
-		BB565EA32734F1FB00C93EAE /* CurrentRoot.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentRoot.m; sourceTree = "<group>"; };
-		BB565EA52734F22D00C93EAE /* CurrentRoot.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentRoot.h; sourceTree = "<group>"; };
 		BB6DB260216435330047A611 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		BB78AB291FAD22440013E782 /* TerminalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TerminalView.h; sourceTree = "<group>"; };
 		BB78AB2A1FAD22440013E782 /* TerminalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TerminalView.m; sourceTree = "<group>"; };
@@ -113,8 +110,6 @@
 				630EFB1C290831C90002A1F5 /* MyUtility.h */,
 				630EFB1D290831C90002A1F5 /* MyUtility.m */,
 				630EFB15290830870002A1F5 /* iSH-Bridging-Header.h */,
-				BB565EA52734F22D00C93EAE /* CurrentRoot.h */,
-				BB565EA32734F1FB00C93EAE /* CurrentRoot.m */,
 				BB78AB291FAD22440013E782 /* TerminalView.h */,
 				BB78AB2A1FAD22440013E782 /* TerminalView.m */,
 				BB0FC5901F980A6B00803272 /* Terminal.h */,
@@ -213,7 +208,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				632B84EB29068296006E182F /* CurrentRoot.m in Sources */,
 				630EFB1B290831050002A1F5 /* MyVC.swift in Sources */,
 				630EFB17290830870002A1F5 /* AppDelegate.swift in Sources */,
 				630EFB19290830CF0002A1F5 /* SceneDelegate.swift in Sources */,
