@@ -17,7 +17,6 @@
 		632B84EE29068296006E182F /* TerminalView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB78AB2A1FAD22440013E782 /* TerminalView.m */; };
 		632B84EF29068296006E182F /* Terminal.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0FC5911F980A6B00803272 /* Terminal.m */; };
 		632B84F029068296006E182F /* ScrollbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = BB23F58C231E1D1400585522 /* ScrollbarView.m */; };
-		632B84F129068296006E182F /* DelayedUITask.m in Sources */ = {isa = PBXBuildFile; fileRef = BB455E101FB37F6600AFB48B /* DelayedUITask.m */; };
 		63DEDCE429097D0C00E55F3B /* MySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DEDCE329097D0C00E55F3B /* MySwift.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,8 +39,6 @@
 		BB23F58B231E1D1400585522 /* ScrollbarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollbarView.h; sourceTree = "<group>"; };
 		BB23F58C231E1D1400585522 /* ScrollbarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollbarView.m; sourceTree = "<group>"; };
 		BB28C755268956C900BDC834 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		BB455E0F1FB37F6600AFB48B /* DelayedUITask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DelayedUITask.h; sourceTree = "<group>"; };
-		BB455E101FB37F6600AFB48B /* DelayedUITask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DelayedUITask.m; sourceTree = "<group>"; };
 		BB6DB260216435330047A611 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		BB78AB291FAD22440013E782 /* TerminalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TerminalView.h; sourceTree = "<group>"; };
 		BB78AB2A1FAD22440013E782 /* TerminalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TerminalView.m; sourceTree = "<group>"; };
@@ -100,8 +97,6 @@
 				BB0FC5911F980A6B00803272 /* Terminal.m */,
 				BB23F58B231E1D1400585522 /* ScrollbarView.h */,
 				BB23F58C231E1D1400585522 /* ScrollbarView.m */,
-				BB455E0F1FB37F6600AFB48B /* DelayedUITask.h */,
-				BB455E101FB37F6600AFB48B /* DelayedUITask.m */,
 				BB792B611F96D90D00FFB7A4 /* Info.plist */,
 				630EFB1129082CAE0002A1F5 /* mysh.xcconfig */,
 			);
@@ -195,7 +190,6 @@
 				632B84EE29068296006E182F /* TerminalView.m in Sources */,
 				632B84EF29068296006E182F /* Terminal.m in Sources */,
 				632B84F029068296006E182F /* ScrollbarView.m in Sources */,
-				632B84F129068296006E182F /* DelayedUITask.m in Sources */,
 				630EFB1E290831C90002A1F5 /* MyUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

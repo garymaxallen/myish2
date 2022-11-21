@@ -6,7 +6,6 @@
 //
 
 #import "Terminal.h"
-#import "DelayedUITask.h"
 #include "fs/devices.h"
 #include "fs/tty.h"
 #include "fs/devices.h"
@@ -27,13 +26,15 @@ typedef struct tty *tty_t;
 // sending output is an asynchronous thing due to javascript, this is used to ensure it doesn't happen twice at once
 @property (nonatomic) BOOL outputInProgress;
 
-@property DelayedUITask *refreshTask;
-@property DelayedUITask *scrollToBottomTask;
+//@property DelayedUITask *refreshTask;
+//@property DelayedUITask *scrollToBottomTask;
 
 @property BOOL applicationCursor;
 
 @property NSNumber *terminalsKey;
 @property NSUUID *uuid;
+
+@property NSTimer *mytimer;
 
 @end
 
@@ -69,14 +70,14 @@ static NSMapTable<NSUUID *, Terminal *> *terminalsByUUID;
         Terminal *terminal = [terminals objectForKey:self.terminalsKey];
         if (terminal)
             return terminal;
-
+        
         if (self = [super init]) {
             self.pendingData = [[NSMutableData alloc] initWithCapacity:BUF_SIZE];
-            self.refreshTask = [[DelayedUITask alloc] initWithTarget:self action:@selector(refresh)];
-            self.scrollToBottomTask = [[DelayedUITask alloc] initWithTarget:self action:@selector(scrollToBottom)];
+//            self.refreshTask = [[DelayedUITask alloc] initWithTarget:self action:@selector(refresh)];
+            //            self.scrollToBottomTask = [[DelayedUITask alloc] initWithTarget:self action:@selector(scrollToBottom)];
             lock_init(&_dataLock);
             cond_init(&_dataConsumed);
-
+            
             [terminals setObject:self forKey:self.terminalsKey];
             self.uuid = [NSUUID UUID];
             [terminalsByUUID setObject:self forKey:self.uuid];
@@ -122,7 +123,7 @@ static NSMapTable<NSUUID *, Terminal *> *terminalsByUUID;
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
     if ([message.name isEqualToString:@"load"]) {
         self.loaded = YES;
-        [self.refreshTask schedule];
+        //        [self.refreshTask schedule];
         // make sure this setting works if it's set before loading
         self.enableVoiceOverAnnounce = self.enableVoiceOverAnnounce;
     } else if ([message.name isEqualToString:@"log"]) {
@@ -165,7 +166,17 @@ static NSMapTable<NSUUID *, Terminal *> *terminalsByUUID;
             wait_for_ignore_signals(&_dataConsumed, &_dataLock, NULL);
     }
     [_pendingData appendData:[NSData dataWithBytes:buf length:len]];
-    [self.refreshTask schedule];
+    
+//    [self.refreshTask schedule];
+    
+    if (!self.mytimer.valid) {
+        self.mytimer = [NSTimer timerWithTimeInterval:1./60 repeats:NO block:^(NSTimer * _Nonnull timer) {
+            self.mytimer = nil;
+            ((void (*)(id, SEL)) [self methodForSelector:@selector(refresh)])(self, @selector(refresh));
+        }];
+        [NSRunLoop.mainRunLoop addTimer:self.mytimer forMode:NSDefaultRunLoopMode];
+    }
+        
     unlock(&_dataLock);
     return len;
 }
@@ -175,7 +186,7 @@ static NSMapTable<NSUUID *, Terminal *> *terminalsByUUID;
         return;
     tty_input(self.tty, input.bytes, input.length, 0);
     [self.webView evaluateJavaScript:@"exports.setUserGesture()" completionHandler:nil];
-    [self.scrollToBottomTask schedule];
+    //    [self.scrollToBottomTask schedule];
 }
 
 - (void)scrollToBottom {
@@ -195,10 +206,10 @@ static NSMapTable<NSUUID *, Terminal *> *terminalsByUUID;
 - (void)refresh {
     if (!self.loaded)
         return;
-
+    
     lock(&_dataLock);
     if (_outputInProgress) {
-        [self.refreshTask schedule];
+//        [self.refreshTask schedule];
         unlock(&_dataLock);
         return;
     }
@@ -207,7 +218,7 @@ static NSMapTable<NSUUID *, Terminal *> *terminalsByUUID;
     _outputInProgress = YES;
     notify(&self->_dataConsumed);
     unlock(&_dataLock);
-
+    
     NSString *dataString = [[NSString alloc] initWithBytes:data.bytes length:data.length encoding:NSISOLatin1StringEncoding];
     // escape for javascript. only have to worry about the first 256 codepoints, because of the latin-1 encoding.
     dataString = [dataString stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"];
@@ -285,7 +296,7 @@ static int ios_tty_init(struct tty *tty) {
         init_block();
     else
         dispatch_sync(dispatch_get_main_queue(), init_block);
-
+    
     lock(&ttys_lock);
     return 0;
 }
