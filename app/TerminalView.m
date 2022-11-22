@@ -8,25 +8,27 @@
 #import "ScrollbarView.h"
 #import "TerminalView.h"
 
+#import "iSH-Swift.h"
+
 struct rowcol {
     int row;
     int col;
 };
 
-@interface WeakScriptMessageHandler : NSObject <WKScriptMessageHandler>
-@property (weak) id <WKScriptMessageHandler> handler;
-@end
-@implementation WeakScriptMessageHandler
-- (instancetype)initWithHandler:(id <WKScriptMessageHandler>)handler {
-    if (self = [super init]) {
-        self.handler = handler;
-    }
-    return self;
-}
-- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
-    [self.handler userContentController:userContentController didReceiveScriptMessage:message];
-}
-@end
+//@interface WeakScriptMessageHandler : NSObject <WKScriptMessageHandler>
+//@property (weak) id <WKScriptMessageHandler> handler;
+//@end
+//@implementation WeakScriptMessageHandler
+//- (instancetype)initWithHandler:(id <WKScriptMessageHandler>)handler {
+//    if (self = [super init]) {
+//        self.handler = handler;
+//    }
+//    return self;
+//}
+//- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
+//    [self.handler userContentController:userContentController didReceiveScriptMessage:message];
+//}
+//@end
 
 @interface TerminalView ()
 
@@ -107,7 +109,8 @@ static NSString *const HANDLERS[] = {@"syncFocus", @"focus", @"newScrollHeight",
     webView.scrollView.delaysContentTouches = NO;
     webView.scrollView.canCancelContentTouches = NO;
     webView.scrollView.panGestureRecognizer.enabled = NO;
-    id <WKScriptMessageHandler> handler = [[WeakScriptMessageHandler alloc] initWithHandler:self];
+//    id <WKScriptMessageHandler> handler = [[WeakScriptMessageHandler alloc] initWithHandler:self];
+    id <WKScriptMessageHandler> handler = [[MyHandler alloc] initWithX:self];
     for (int i = 0; i < sizeof(HANDLERS)/sizeof(HANDLERS[0]); i++) {
         [webView.configuration.userContentController addScriptMessageHandler:handler name:HANDLERS[i]];
     }
@@ -228,21 +231,21 @@ static NSString *const HANDLERS[] = {@"syncFocus", @"focus", @"newScrollHeight",
     [self.terminal.webView evaluateJavaScript:[NSString stringWithFormat:@"exports.newScrollTop(%f)", scrollView.contentOffset.y] completionHandler:nil];
 }
 
-- (void)setKeyboardAppearance:(UIKeyboardAppearance)keyboardAppearance {
-    BOOL needsFirstResponderDance = self.isFirstResponder && _keyboardAppearance != keyboardAppearance;
-    if (needsFirstResponderDance) {
-        [self resignFirstResponder];
-    }
-    _keyboardAppearance = keyboardAppearance;
-    if (needsFirstResponderDance) {
-        [self becomeFirstResponder];
-    }
-    if (keyboardAppearance == UIKeyboardAppearanceLight) {
-        self.scrollbarView.indicatorStyle = UIScrollViewIndicatorStyleBlack;
-    } else {
-        self.scrollbarView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
-    }
-}
+//- (void)setKeyboardAppearance:(UIKeyboardAppearance)keyboardAppearance {
+//    BOOL needsFirstResponderDance = self.isFirstResponder && _keyboardAppearance != keyboardAppearance;
+//    if (needsFirstResponderDance) {
+//        [self resignFirstResponder];
+//    }
+//    _keyboardAppearance = keyboardAppearance;
+//    if (needsFirstResponderDance) {
+//        [self becomeFirstResponder];
+//    }
+//    if (keyboardAppearance == UIKeyboardAppearanceLight) {
+//        self.scrollbarView.indicatorStyle = UIScrollViewIndicatorStyleBlack;
+//    } else {
+//        self.scrollbarView.indicatorStyle = UIScrollViewIndicatorStyleWhite;
+//    }
+//}
 
 #pragma mark Keyboard Input
 
